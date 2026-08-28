@@ -184,6 +184,7 @@
     width:54px; height:54px; border-radius:50%;
     background: rgba(255,255,255,0.12); border: 1.5px solid rgba(255,255,255,0.4);
     display:flex; align-items:center; justify-content:center;
+    transition: opacity .2s ease;
   }
   .phone-play svg{ width:16px; height:16px; margin-left:2px; }
   .phone-caption{
@@ -212,6 +213,24 @@
     color: rgba(255,255,255,0.75); background: rgba(255,255,255,0.1);
     border: 1px solid rgba(255,255,255,0.2);
     padding: 5px 9px; border-radius: 100px;
+  }
+
+  /* ---------- phone video/image integration ---------- */
+  .phone-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+  }
+  .phone-caption, 
+  .phone-badge, 
+  .phone-play, 
+  .phone-notch {
+    position: relative;
+    z-index: 2;
   }
 
   /* ---------- generic section ---------- */
@@ -333,10 +352,11 @@
     <nav class="nav-links">
       <a href="#work">Work</a>
       <a href="#process">Process</a>
+      <a href="#ugc-types">Other Works</a>
       <a href="#tools">Tools</a>
     </nav>
-    <a class="nav-cta" href="mailto:klint27marino@gmail.com">
-      <span class="dot"></span> Email Klint
+    <a class="nav-cta" href="#contact">
+      <span class="dot"></span> Contact Klint
     </a>
   </div>
 </header>
@@ -344,10 +364,11 @@
 <!-- Scroll-linked timecode rail — desktop only, mirrors the page's sections -->
 <nav class="rail" id="rail">
   <a href="#hero" class="rail-item" data-target="hero"><span class="tick"></span><span class="label">00:00 INTRO</span></a>
-  <a href="#work" class="rail-item" data-target="work"><span class="tick"></span><span class="label">00:14 WORK</span></a>
-  <a href="#process" class="rail-item" data-target="process"><span class="tick"></span><span class="label">00:32 PROCESS</span></a>
-  <a href="#tools" class="rail-item" data-target="tools"><span class="tick"></span><span class="label">00:51 TOOLS</span></a>
-  <a href="#contact" class="rail-item" data-target="contact"><span class="tick"></span><span class="label">01:08 CONTACT</span></a>
+  <a href="#work" class="rail-item" data-target="work"><span class="tick"></span><span class="label">00:14 PORTFOLIO</span></a>
+  <a href="#process" class="rail-item" data-target="process"><span class="tick"></span><span class="label">00:32 WORKFLOW</span></a>
+  <a href="#ugc-types" class="rail-item" data-target="ugc-types"><span class="tick"></span><span class="label">00:48 OTHER WORKS</span></a>
+  <a href="#tools" class="rail-item" data-target="tools"><span class="tick"></span><span class="label">01:02 STACK</span></a>
+  <a href="#contact" class="rail-item" data-target="contact"><span class="tick"></span><span class="label">01:15 CONTACT</span></a>
 </nav>
 
 <main class="wrap">
@@ -363,13 +384,14 @@
         platform's actually running the spend. <strong>No fluff, just ads that convert.</strong>
       </p>
       <div class="cta-row">
-        <a class="btn btn-solid" href="mailto:klint27marino@gmail.com">Book a project</a>
-        <a class="btn btn-ghost" href="#work">See the reels</a>
+        <a class="btn btn-solid" href="#work">See my work</a>
       </div>
     </div>
 
     <div class="phone">
       <div class="phone-screen">
+        <div class="phone-notch"></div>
+        <video class="phone-video" src="https://res.cloudinary.com/pot1alz4/video/upload/UGC_sample.mp4" loop muted playsinline></video>
         <div class="phone-play">
           <svg viewBox="0 0 24 24" fill="white"><polygon points="6,4 20,12 6,20"/></svg>
         </div>
@@ -390,75 +412,81 @@
     <div class="section-head">
       <div>
         <span class="section-tag">Reels — 00:14</span>
-        <h2 class="section-title">A few concepts in production</h2>
+        <h2 class="section-title">Concept Portfolio</h2>
       </div>
-      <p class="section-note">These are being shot &amp; edited right now. Each slot below will hold a finished vertical ad.</p>
+      <p class="section-note">High-converting direct-response edits for clean beauty brands. Hover or tap to view pacing.</p>
     </div>
 
     <div class="work-grid">
 
+      <!-- Card 1: Hook / Talking Head -->
       <div class="reel-card">
         <div class="phone">
           <div class="phone-screen">
-            <span class="phone-badge">IN PRODUCTION</span>
+            <div class="phone-notch"></div>
+            <img class="phone-video" src="https://res.cloudinary.com/pot1alz4/image/upload/v1787941145/Video1_talking_head.gif" alt="Talking Head Hook">
             <div class="phone-play"><svg viewBox="0 0 24 24" fill="white"><polygon points="6,4 20,12 6,20"/></svg></div>
             <div class="phone-caption">
-              <p>"I wasn't going to buy this until I saw this part..."</p>
+              <p>"Wait... you've been applying your lip gloss wrong this whole time 😳"</p>
+              <div class="phone-scrub"><span>00:03</span><span class="bar"></span><span>00:15</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="reel-meta"><span class="k">Format</span><span class="v">Talking Head Hook</span></div>
+      </div>
+
+      <!-- Card 2: Product Reveal -->
+      <div class="reel-card">
+        <div class="phone">
+          <div class="phone-screen">
+            <div class="phone-notch"></div>
+            <img class="phone-video" src="https://res.cloudinary.com/pot1alz4/image/upload/v1787941145/Video2_product_reveal.gif" alt="Product Reveal">
+            <div class="phone-play"><svg viewBox="0 0 24 24" fill="white"><polygon points="6,4 20,12 6,20"/></svg></div>
+            <div class="phone-caption">
+              <p>"Unboxing the aesthetic packaging of my dreams..."</p>
               <div class="phone-scrub"><span>00:02</span><span class="bar"></span><span>00:18</span></div>
             </div>
           </div>
         </div>
-        <div class="reel-meta"><span class="k">Format</span><span class="v">UGC testimonial hook</span></div>
+        <div class="reel-meta"><span class="k">Format</span><span class="v">Aesthetic Product Reveal</span></div>
       </div>
 
+      <!-- Card 3: Application -->
       <div class="reel-card">
         <div class="phone">
           <div class="phone-screen">
-            <span class="phone-badge">IN PRODUCTION</span>
+            <div class="phone-notch"></div>
+            <img class="phone-video" src="https://res.cloudinary.com/pot1alz4/image/upload/v1787941145/Video3_application.gif" alt="Application">
             <div class="phone-play"><svg viewBox="0 0 24 24" fill="white"><polygon points="6,4 20,12 6,20"/></svg></div>
             <div class="phone-caption">
-              <p>"3 things nobody tells you before buying this"</p>
-              <div class="phone-scrub"><span>00:01</span><span class="bar"></span><span>00:22</span></div>
+              <p>"This formula is so creamy it literally melts onto your skin"</p>
+              <div class="phone-scrub"><span>00:04</span><span class="bar"></span><span>00:22</span></div>
             </div>
           </div>
         </div>
-        <div class="reel-meta"><span class="k">Format</span><span class="v">AI avatar listicle</span></div>
+        <div class="reel-meta"><span class="k">Format</span><span class="v">Application Tutorial</span></div>
       </div>
 
+      <!-- Card 4: Gloss Close-Up / CTA -->
       <div class="reel-card">
         <div class="phone">
           <div class="phone-screen">
-            <span class="phone-badge">IN PRODUCTION</span>
+            <div class="phone-notch"></div>
+            <img class="phone-video" src="https://res.cloudinary.com/pot1alz4/image/upload/v1787941145/Video4_gloss_cta.gif" alt="Gloss Close-up CTA">
             <div class="phone-play"><svg viewBox="0 0 24 24" fill="white"><polygon points="6,4 20,12 6,20"/></svg></div>
             <div class="phone-caption">
-              <p>"Unboxing the thing my FYP wouldn't shut up about"</p>
-              <div class="phone-scrub"><span>00:04</span><span class="bar"></span><span>00:16</span></div>
+              <p>"The ultimate high-shine finish. Link in bio to grab yours! 💋"</p>
+              <div class="phone-scrub"><span>00:01</span><span class="bar"></span><span>00:20</span></div>
             </div>
           </div>
         </div>
-        <div class="reel-meta"><span class="k">Format</span><span class="v">Unboxing / reveal</span></div>
-      </div>
-
-      <div class="reel-card">
-        <div class="phone">
-          <div class="phone-screen">
-            <span class="phone-badge">IN PRODUCTION</span>
-            <div class="phone-play"><svg viewBox="0 0 24 24" fill="white"><polygon points="6,4 20,12 6,20"/></svg></div>
-            <div class="phone-caption">
-              <p>"Before / after — 14 days with this routine"</p>
-              <div class="phone-scrub"><span>00:03</span><span class="bar"></span><span>00:20</span></div>
-            </div>
-          </div>
-        </div>
-        <div class="reel-meta"><span class="k">Format</span><span class="v">Before / after proof</span></div>
+        <div class="reel-meta"><span class="k">Format</span><span class="v">Close-Up Gloss &amp; CTA</span></div>
       </div>
 
     </div>
 
     <p class="work-footnote">
-      Full reels dropping soon — each one is being scripted, voiced with AI, and cut
-      the same way I'd handle a live client ad account. Email me and I'll send finished
-      cuts directly as they're ready.
+      Each concept is strategically mapped to maximize DTC ad account retention. Hover or tap any screen to view the pacing and overlays.
     </p>
   </section>
 
@@ -511,11 +539,94 @@
     </div>
   </section>
 
+  <!-- ================= OTHER UGC WORKS ================= -->
+  <section id="ugc-types">
+    <div class="section-head">
+      <div>
+        <span class="section-tag">Other Works — 00:48</span>
+        <h2 class="section-title">UGC Campaign Formats</h2>
+      </div>
+      <p class="section-note">Strategic video structures optimized to drive conversions across different niches. (Ready to host your video links below).</p>
+    </div>
+
+    <div class="work-grid">
+
+      <!-- Card 1: Unboxing & First Impression -->
+      <div class="reel-card">
+        <div class="phone">
+          <div class="phone-screen">
+            <div class="phone-notch"></div>
+            <!-- SWAP SOURCE BELOW WITH YOUR COMPRESSED MP4 DIRECT LINK -->
+            <video class="phone-video" src="https://res.cloudinary.com/pot1alz4/video/upload/UGC_sample.mp4" loop muted playsinline></video>
+            <div class="phone-play"><svg viewBox="0 0 24 24" fill="white"><polygon points="6,4 20,12 6,20"/></svg></div>
+            <div class="phone-caption">
+              <p>"Unboxing the viral package my FYP won't shut up about..."</p>
+              <div class="phone-scrub"><span>00:02</span><span class="bar"></span><span>00:15</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="reel-meta"><span class="k">Format</span><span class="v">Unboxing &amp; First Impression</span></div>
+      </div>
+
+      <!-- Card 2: Talking Head Testimonial -->
+      <div class="reel-card">
+        <div class="phone">
+          <div class="phone-screen">
+            <div class="phone-notch"></div>
+            <!-- SWAP SOURCE BELOW WITH YOUR COMPRESSED MP4 DIRECT LINK -->
+            <video class="phone-video" src="https://res.cloudinary.com/pot1alz4/video/upload/UGC_sample.mp4" loop muted playsinline></video>
+            <div class="phone-play"><svg viewBox="0 0 24 24" fill="white"><polygon points="6,4 20,12 6,20"/></svg></div>
+            <div class="phone-caption">
+              <p>"The honest truth about using this product for 30 days..."</p>
+              <div class="phone-scrub"><span>00:03</span><span class="bar"></span><span>00:18</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="reel-meta"><span class="k">Format</span><span class="v">"Talking Head" Testimonial</span></div>
+      </div>
+
+      <!-- Card 3: Product Demonstration / How-To -->
+      <div class="reel-card">
+        <div class="phone">
+          <div class="phone-screen">
+            <div class="phone-notch"></div>
+            <!-- SWAP SOURCE BELOW WITH YOUR COMPRESSED MP4 DIRECT LINK -->
+            <video class="phone-video" src="https://res.cloudinary.com/pot1alz4/video/upload/UGC_sample.mp4" loop muted playsinline></video>
+            <div class="phone-play"><svg viewBox="0 0 24 24" fill="white"><polygon points="6,4 20,12 6,20"/></svg></div>
+            <div class="phone-caption">
+              <p>"How to get perfect results in less than 60 seconds..."</p>
+              <div class="phone-scrub"><span>00:04</span><span class="bar"></span><span>00:22</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="reel-meta"><span class="k">Format</span><span class="v">Product Demonstration / How-To</span></div>
+      </div>
+
+      <!-- Card 4: Problem-Solution / Pain Point -->
+      <div class="reel-card">
+        <div class="phone">
+          <div class="phone-screen">
+            <div class="phone-notch"></div>
+            <!-- SWAP SOURCE BELOW WITH YOUR COMPRESSED MP4 DIRECT LINK -->
+            <video class="phone-video" src="https://res.cloudinary.com/pot1alz4/video/upload/UGC_sample.mp4" loop muted playsinline></video>
+            <div class="phone-play"><svg viewBox="0 0 24 24" fill="white"><polygon points="6,4 20,12 6,20"/></svg></div>
+            <div class="phone-caption">
+              <p>"If you still struggle with this problem, stop scrolling..."</p>
+              <div class="phone-scrub"><span>00:01</span><span class="bar"></span><span>00:20</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="reel-meta"><span class="k">Format</span><span class="v">"Problem-Solution" / Pain Point</span></div>
+      </div>
+
+    </div>
+  </section>
+
   <!-- ================= TOOLS ================= -->
   <section id="tools">
     <div class="section-head">
       <div>
-        <span class="section-tag">Stack — 00:51</span>
+        <span class="section-tag">Stack — 01:02</span>
         <h2 class="section-title">What I edit with</h2>
       </div>
     </div>
@@ -523,6 +634,7 @@
       <span class="chip">CapCut</span>
       <span class="chip">ElevenLabs</span>
       <span class="chip">HeyGen</span>
+      <span class="chip">Higgsfield</span>
       <span class="chip">ChatGPT</span>
       <span class="chip">Claude</span>
       <span class="chip">Canva</span>
@@ -535,7 +647,7 @@
 <!-- ================= CONTACT ================= -->
 <section id="contact" class="contact">
   <div class="wrap">
-    <span class="section-tag">Get in touch — 01:08</span>
+    <span class="section-tag">Get in touch — 01:15</span>
     <h2>Got a product worth <span style="color:var(--rec)">turning into an ad?</span></h2>
     <div class="email-row">
       <span id="emailText">klint27marino@gmail.com</span>
@@ -562,7 +674,7 @@
 
   // Scroll-linked timecode rail
   const railItems = document.querySelectorAll('.rail-item');
-  const sections = document.querySelectorAll('main section, .hero');
+  const sections = document.querySelectorAll('main section, .hero, #contact');
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting){
@@ -575,12 +687,71 @@
   }, { rootMargin: '-45% 0px -45% 0px' });
   sections.forEach(sec => observer.observe(sec));
 
-  // Top progress bar (mobile timeline)
+  // Top progress bar (mobile timeline) & Force Contact rail active at bottom
   const progressBar = document.getElementById('progressBar');
   window.addEventListener('scroll', () => {
     const h = document.documentElement;
     const scrolled = (h.scrollTop) / (h.scrollHeight - h.clientHeight) * 100;
     progressBar.style.width = scrolled + '%';
+
+    // If scrolled to the very bottom, override rail active class to 'contact'
+    if (window.innerHeight + window.scrollY >= h.scrollHeight - 60) {
+      railItems.forEach(item => {
+        item.classList.toggle('active', item.dataset.target === 'contact');
+      });
+    }
+  });
+
+  // Hover-to-play interface interaction
+  const phoneContainers = document.querySelectorAll('.phone');
+
+  phoneContainers.forEach(container => {
+    const media = container.querySelector('.phone-video');
+    const playButton = container.querySelector('.phone-play');
+
+    if (media) {
+      const isVideo = media.tagName === 'VIDEO';
+
+      // Hover behavior
+      container.addEventListener('mouseenter', () => {
+        if (isVideo) {
+          media.muted = false;
+          media.play().catch(() => {
+            media.muted = true;
+            media.play();
+          });
+        }
+        if (playButton) playButton.style.opacity = '0';
+      });
+
+      container.addEventListener('mouseleave', () => {
+        if (isVideo) {
+          media.pause();
+          media.muted = true;
+        }
+        if (playButton) playButton.style.opacity = '1';
+      });
+
+      // Tap behavior
+      container.addEventListener('click', () => {
+        if (isVideo) {
+          if (media.paused) {
+            media.muted = false;
+            media.play().catch(() => {});
+            if (playButton) playButton.style.opacity = '0';
+          } else {
+            media.pause();
+            media.muted = true;
+            if (playButton) playButton.style.opacity = '1';
+          }
+        } else {
+          // Toggle play button opacity on image/GIF tap
+          if (playButton) {
+            playButton.style.opacity = playButton.style.opacity === '0' ? '1' : '0';
+          }
+        }
+      });
+    }
   });
 </script>
 
