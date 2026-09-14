@@ -325,15 +325,70 @@
     flex-wrap: wrap; gap: 10px;
   }
 
+
+  /* ---------- other creative ad formats ---------- */
+  .creative-formats-grid{
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .format-card .reel-meta{
+    padding-top: 2px;
+  }
+  .format-placeholder{
+    position: relative;
+    aspect-ratio: 9/16;
+    width: 100%;
+    border-radius: 30px;
+    overflow: hidden;
+    background:
+      repeating-linear-gradient(135deg, rgba(255,255,255,0.035) 0 2px, transparent 2px 14px),
+      linear-gradient(160deg, #24242C 0%, #131318 65%, #0C0C10 100%);
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 22px;
+    box-shadow: 0 30px 60px -20px rgba(19,19,24,0.28);
+  }
+  .format-icon{
+    font-family: var(--font-mono);
+    font-size: 12px;
+    color: var(--amber);
+    letter-spacing: .08em;
+    margin-bottom: auto;
+  }
+  .format-label{
+    font-family: var(--font-display);
+    font-size: clamp(30px, 4vw, 46px);
+    line-height: .95;
+    text-transform: uppercase;
+    max-width: 220px;
+  }
+  .format-status{
+    font-family: var(--font-mono);
+    font-size: 9px;
+    letter-spacing: .08em;
+    color: rgba(255,255,255,.58);
+    margin-top: 12px;
+  }
+  .format-desc{
+    font-size: 13.5px;
+    line-height: 1.5;
+    color: var(--ink-soft);
+    margin-top: 8px;
+    max-width: 360px;
+  }
+
   @media (max-width: 900px){
     .rail{ display:none; }
     .hero{ grid-template-columns: 1fr; padding-top: 60px; }
     .hero .phone{ margin: 0 auto; max-width: 240px; }
     .work-grid{ grid-template-columns: repeat(2, 1fr); }
+    .creative-formats-grid{ grid-template-columns: repeat(2, 1fr); }
     .nav-links{ display:none; }
   }
   @media (max-width: 560px){
     .work-grid{ grid-template-columns: 1fr; }
+    .creative-formats-grid{ grid-template-columns: 1fr; }
     .process-row{ grid-template-columns: 1fr; gap: 6px; }
   }
 
@@ -352,7 +407,7 @@
     <nav class="nav-links">
       <a href="#work">Work</a>
       <a href="#process">Process</a>
-      <a href="#ugc-types">Other Works</a>
+      <a href="#ugc-types">UGC Works</a><a href="#creative-formats">Ad Formats</a>
       <a href="#tools">Tools</a>
     </nav>
     <a class="nav-cta" href="#contact">
@@ -366,8 +421,9 @@
   <a href="#hero" class="rail-item" data-target="hero"><span class="tick"></span><span class="label">00:00 INTRO</span></a>
   <a href="#work" class="rail-item" data-target="work"><span class="tick"></span><span class="label">00:14 PORTFOLIO</span></a>
   <a href="#process" class="rail-item" data-target="process"><span class="tick"></span><span class="label">00:32 WORKFLOW</span></a>
-  <a href="#ugc-types" class="rail-item" data-target="ugc-types"><span class="tick"></span><span class="label">00:48 OTHER WORKS</span></a>
-  <a href="#tools" class="rail-item" data-target="tools"><span class="tick"></span><span class="label">01:02 STACK</span></a>
+  <a href="#ugc-types" class="rail-item" data-target="ugc-types"><span class="tick"></span><span class="label">00:48 UGC WORKS</span></a>
+  <a href="#creative-formats" class="rail-item" data-target="creative-formats"><span class="tick"></span><span class="label">01:02 AD FORMATS</span></a>
+  <a href="#tools" class="rail-item" data-target="tools"><span class="tick"></span><span class="label">01:12 STACK</span></a>
   <a href="#contact" class="rail-item" data-target="contact"><span class="tick"></span><span class="label">01:15 CONTACT</span></a>
 </nav>
 
@@ -622,11 +678,115 @@
     </div>
   </section>
 
+
+  <!-- ================= OTHER CREATIVE AD FORMATS ================= -->
+  <section id="creative-formats">
+    <div class="section-head">
+      <div>
+        <span class="section-tag">Creative Formats — 01:02</span>
+        <h2 class="section-title">Other Creative Ad Formats</h2>
+      </div>
+      <p class="section-note">Beyond traditional UGC — demonstrating flexibility across storytelling styles, audiences, and production formats.</p>
+    </div>
+
+    <div class="work-grid creative-formats-grid">
+      <!-- Card 1: Podcast-Style Ad -->
+      <div class="reel-card format-card">
+        <div class="phone">
+          <div class="phone-screen">
+            <div class="phone-notch"></div>
+            <video
+              class="phone-video"
+              src="https://res.cloudinary.com/pot1alz4/video/upload/v1789394383/Podcast_AI.mp4"
+              loop
+              muted
+              playsinline
+            ></video>
+            <div class="phone-play">
+              <svg viewBox="0 0 24 24" fill="white">
+                <polygon points="6,4 20,12 6,20"/>
+              </svg>
+            </div>
+          </div>
+        </div>
+
+        <div class="reel-meta">
+          <span class="k">Format</span>
+          <span class="v">Podcast-Style Ad</span>
+          <p class="format-desc">
+            Conversational, podcast-inspired storytelling with a natural spoken hook,
+            supporting B-roll, captions, and retention-focused pacing.
+          </p>
+        </div>
+      </div>
+
+      <!-- Card 2: Multilingual UGC — French -->
+      <div class="reel-card format-card">
+        <div class="phone">
+          <div class="phone-screen">
+            <div class="phone-notch"></div>
+            <video
+              class="phone-video"
+              src="https://res.cloudinary.com/pot1alz4/video/upload/v1789401910/Evoliya_UGC.mp4"
+              loop
+              muted
+              playsinline
+            ></video>
+            <div class="phone-play">
+              <svg viewBox="0 0 24 24" fill="white">
+                <polygon points="6,4 20,12 6,20"/>
+              </svg>
+            </div>
+          </div>
+        </div>
+
+        <div class="reel-meta">
+          <span class="k">Format</span>
+          <span class="v">Multilingual UGC — French</span>
+          <p class="format-desc">
+            UGC adapted for French-speaking audiences through localized scripting,
+            AI voice production, creator-style visuals, captions, and pacing.
+          </p>
+        </div>
+      </div>
+
+   <!-- Card 3: 3D Animated Ad -->
+<div class="reel-card format-card">
+  <div class="phone">
+    <div class="phone-screen">
+      <div class="phone-notch"></div>
+
+      <video
+        class="phone-video"
+        src="https://res.cloudinary.com/pot1alz4/video/upload/v1789416761/Pixar3d2.mp4"
+        loop
+        muted
+        playsinline
+      ></video>
+
+      <div class="phone-play">
+        <svg viewBox="0 0 24 24" fill="white">
+          <polygon points="6,4 20,12 6,20"/>
+        </svg>
+      </div>
+    </div>
+  </div>
+
+  <div class="reel-meta">
+    <span class="k">Format</span>
+    <span class="v">3D Animated Ad</span>
+    <p class="format-desc">
+      Character-driven animated advertising with expressive visuals,
+      cinematic scenes, product moments, and a direct-response structure.
+    </p>
+  </div>
+</div>
+
   <!-- ================= TOOLS ================= -->
   <section id="tools">
     <div class="section-head">
       <div>
-        <span class="section-tag">Stack — 01:02</span>
+        <span class="section-tag">Stack — 01:12</span>
         <h2 class="section-title">What I edit with</h2>
       </div>
     </div>
@@ -648,7 +808,7 @@
 <!-- ================= CONTACT ================= -->
 <section id="contact" class="contact">
   <div class="wrap">
-    <span class="section-tag">Get in touch — 01:15</span>
+    <span class="section-tag">Get in touch — 01:25</span>
     <h2>Got a product worth <span style="color:var(--rec)">turning into an ad?</span></h2>
     <div class="email-row">
       <span id="emailText">klint27marino@gmail.com</span>
