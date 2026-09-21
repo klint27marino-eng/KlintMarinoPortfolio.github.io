@@ -11,7 +11,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 
 <style>
-  :root{
+  :root {
     --paper: #ECEDF1;
     --paper-2: #DEE0E6;
     --ink: #131318;
@@ -27,17 +27,17 @@
     --font-mono: 'JetBrains Mono', monospace;
   }
 
-  *{
+  * {
     box-sizing: border-box;
-    margin:0;
-    padding:0;
+    margin: 0;
+    padding: 0;
   }
 
-  html{
+  html {
     scroll-behavior: smooth;
   }
 
-  body{
+  body {
     background: var(--paper);
     color: var(--ink);
     font-family: var(--font-body);
@@ -45,803 +45,786 @@
     -webkit-font-smoothing: antialiased;
   }
 
-  img,svg{
-    display:block;
-    max-width:100%;
+  img, svg {
+    display: block;
+    max-width: 100%;
   }
 
-  a{
+  a {
     color: inherit;
     text-decoration: none;
   }
 
-  ul{
-    list-style:none;
+  ul {
+    list-style: none;
   }
 
-  :focus-visible{
+  :focus-visible {
     outline: 2.5px solid var(--signal);
     outline-offset: 3px;
   }
 
-  .wrap{
-    max-width:1160px;
-    margin:0 auto;
-    padding:0 28px;
+  .wrap {
+    max-width: 1160px;
+    margin: 0 auto;
+    padding: 0 28px;
   }
 
   /* ---------- top progress bar ---------- */
-
-  .progress-bar{
-    position:fixed;
-    top:0;
-    left:0;
-    height:3px;
-    width:0%;
-    background:var(--rec);
-    z-index:200;
-    transition:width .1s linear;
+  .progress-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 3px;
+    width: 0%;
+    background: var(--rec);
+    z-index: 200;
+    transition: width .1s linear;
   }
 
   /* ---------- header ---------- */
-
-  header{
-    position:sticky;
-    top:0;
-    z-index:100;
-    background:rgba(236,237,241,0.86);
-    backdrop-filter:blur(10px);
-    border-bottom:1px solid var(--line);
+  header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(236,237,241,0.86);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--line);
   }
 
-  .nav{
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    padding:18px 28px;
+  .nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 18px 28px;
   }
 
-  .logo{
-    font-family:var(--font-mono);
-    font-weight:600;
-    font-size:15px;
-    letter-spacing:0.02em;
+  .logo {
+    font-family: var(--font-mono);
+    font-weight: 600;
+    font-size: 15px;
+    letter-spacing: 0.02em;
   }
 
-  .logo span{
-    color:var(--rec);
+  .logo span {
+    color: var(--rec);
   }
 
-  .nav-links{
-    display:flex;
-    align-items:center;
-    gap:30px;
+  .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 30px;
   }
 
-  .nav-links a{
-    font-family:var(--font-mono);
-    font-size:12.5px;
-    letter-spacing:0.06em;
-    text-transform:uppercase;
-    color:var(--ink-soft);
-    transition:color .15s ease;
+  .nav-links a {
+    font-family: var(--font-mono);
+    font-size: 12.5px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    transition: color .15s ease;
   }
 
-  .nav-links a:hover{
-    color:var(--ink);
+  .nav-links a:hover {
+    color: var(--ink);
   }
 
-  .nav-cta{
-    font-family:var(--font-mono);
-    font-size:12.5px;
-    letter-spacing:0.04em;
-    background:var(--ink);
-    color:var(--paper);
-    padding:10px 16px;
-    border-radius:100px;
-    display:inline-flex;
-    align-items:center;
-    gap:8px;
-    transition:background .15s ease;
+  .nav-cta {
+    font-family: var(--font-mono);
+    font-size: 12.5px;
+    letter-spacing: 0.04em;
+    background: var(--ink);
+    color: var(--paper);
+    padding: 10px 16px;
+    border-radius: 100px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: background .15s ease;
   }
 
-  .nav-cta:hover{
-    background:var(--rec);
-    color:#fff;
+  .nav-cta:hover {
+    background: var(--rec);
+    color: #fff;
   }
 
-  .nav-cta .dot{
-    width:6px;
-    height:6px;
-    border-radius:50%;
-    background:currentColor;
-  }
-
-  .menu-toggle{
-    display:none;
+  .nav-cta .dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: currentColor;
   }
 
   /* ---------- timecode rail ---------- */
-
-  .rail{
-    position:fixed;
-    left:26px;
-    top:50%;
-    transform:translateY(-50%);
-    display:flex;
-    flex-direction:column;
-    gap:26px;
-    z-index:90;
+  .rail {
+    position: fixed;
+    left: 26px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 26px;
+    z-index: 90;
   }
 
-  .rail::before{
-    content:'';
-    position:absolute;
-    left:5px;
-    top:0;
-    bottom:0;
-    width:1px;
-    background:var(--line-strong);
+  .rail::before {
+    content: '';
+    position: absolute;
+    left: 5px;
+    top: 0;
+    bottom: 0;
+    width: 1px;
+    background: var(--line-strong);
   }
 
-  .rail-item{
-    display:flex;
-    align-items:center;
-    gap:10px;
-    cursor:pointer;
-    font-family:var(--font-mono);
-    font-size:11px;
-    color:var(--ink-soft);
-    letter-spacing:0.04em;
+  .rail-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    font-family: var(--font-mono);
+    font-size: 11px;
+    color: var(--ink-soft);
+    letter-spacing: 0.04em;
   }
 
-  .rail-item .tick{
-    width:11px;
-    height:11px;
-    border-radius:50%;
-    background:var(--paper);
-    border:1.5px solid var(--line-strong);
-    flex-shrink:0;
-    transition:all .2s ease;
+  .rail-item .tick {
+    width: 11px;
+    height: 11px;
+    border-radius: 50%;
+    background: var(--paper);
+    border: 1.5px solid var(--line-strong);
+    flex-shrink: 0;
+    transition: all .2s ease;
   }
 
-  .rail-item .label{
-    opacity:0;
-    transform:translateX(-4px);
-    transition:all .2s ease;
-    white-space:nowrap;
+  .rail-item .label {
+    opacity: 0;
+    transform: translateX(-4px);
+    transition: all .2s ease;
+    white-space: nowrap;
   }
 
   .rail-item:hover .label,
-  .rail-item.active .label{
-    opacity:1;
-    transform:translateX(0);
+  .rail-item.active .label {
+    opacity: 1;
+    transform: translateX(0);
   }
 
-  .rail-item.active{
-    color:var(--ink);
+  .rail-item.active {
+    color: var(--ink);
   }
 
-  .rail-item.active .tick{
-    background:var(--signal);
-    border-color:var(--signal);
-    box-shadow:0 0 0 4px rgba(47,111,237,0.15);
+  .rail-item.active .tick {
+    background: var(--signal);
+    border-color: var(--signal);
+    box-shadow: 0 0 0 4px rgba(47,111,237,0.15);
   }
 
   /* ---------- hero ---------- */
-
-  .hero{
-    padding:96px 0 90px;
-    display:grid;
-    grid-template-columns:1.15fr 0.85fr;
-    gap:56px;
-    align-items:center;
+  .hero {
+    padding: 96px 0 90px;
+    display: grid;
+    grid-template-columns: 1.15fr 0.85fr;
+    gap: 56px;
+    align-items: center;
   }
 
-  .eyebrow{
-    display:inline-flex;
-    align-items:center;
-    gap:8px;
-    font-family:var(--font-mono);
-    font-size:12.5px;
-    letter-spacing:0.08em;
-    text-transform:uppercase;
-    color:var(--ink-soft);
-    margin-bottom:22px;
+  .eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-family: var(--font-mono);
+    font-size: 12.5px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    margin-bottom: 22px;
   }
 
-  .rec-dot{
-    width:9px;
-    height:9px;
-    border-radius:50%;
-    background:var(--rec);
-    animation:pulse 1.6s ease-in-out infinite;
+  .rec-dot {
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background: var(--rec);
+    animation: pulse 1.6s ease-in-out infinite;
   }
 
-  @keyframes pulse{
-    0%,100%{
-      opacity:1;
-      box-shadow:0 0 0 0 rgba(255,68,56,0.35);
+  @keyframes pulse {
+    0%, 100% {
+      opacity: 1;
+      box-shadow: 0 0 0 0 rgba(255,68,56,0.35);
     }
-
-    50%{
-      opacity:.7;
-      box-shadow:0 0 0 6px rgba(255,68,56,0);
+    50% {
+      opacity: .7;
+      box-shadow: 0 0 0 6px rgba(255,68,56,0);
     }
   }
 
-  h1{
-    font-family:var(--font-display);
-    font-weight:400;
-    font-size:clamp(40px,5.4vw,74px);
-    line-height:.98;
-    letter-spacing:-0.01em;
-    text-transform:uppercase;
-    margin-bottom:26px;
+  h1 {
+    font-family: var(--font-display);
+    font-weight: 400;
+    font-size: clamp(40px, 5.4vw, 74px);
+    line-height: .98;
+    letter-spacing: -0.01em;
+    text-transform: uppercase;
+    margin-bottom: 26px;
   }
 
-  h1 .mark{
-    background:linear-gradient(
-      180deg,
-      transparent 62%,
-      var(--amber) 62%
-    );
+  h1 .mark {
+    background: linear-gradient(180deg, transparent 62%, var(--amber) 62%);
   }
 
-  .hero-sub{
-    font-size:17px;
-    color:var(--ink-soft);
-    max-width:480px;
-    margin-bottom:34px;
+  .hero-sub {
+    font-size: 17px;
+    color: var(--ink-soft);
+    max-width: 480px;
+    margin-bottom: 34px;
   }
 
-  .hero-sub strong{
-    color:var(--ink);
-    font-weight:600;
+  .hero-sub strong {
+    color: var(--ink);
+    font-weight: 600;
   }
 
-  .cta-row{
-    display:flex;
-    gap:14px;
-    flex-wrap:wrap;
+  .cta-row {
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
   }
 
-  .btn{
-    font-family:var(--font-mono);
-    font-size:13px;
-    letter-spacing:.03em;
-    padding:15px 24px;
-    border-radius:100px;
-    display:inline-flex;
-    align-items:center;
-    gap:10px;
-    border:1.5px solid var(--ink);
-    transition:all .15s ease;
+  .btn {
+    font-family: var(--font-mono);
+    font-size: 13px;
+    letter-spacing: .03em;
+    padding: 15px 24px;
+    border-radius: 100px;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    border: 1.5px solid var(--ink);
+    transition: all .15s ease;
   }
 
-  .btn-solid{
-    background:var(--ink);
-    color:var(--paper);
+  .btn-solid {
+    background: var(--ink);
+    color: var(--paper);
   }
 
-  .btn-solid:hover{
-    background:var(--rec);
-    border-color:var(--rec);
-    color:#fff;
-  }
-
-  .btn-ghost{
-    background:transparent;
-    color:var(--ink);
-  }
-
-  .btn-ghost:hover{
-    background:var(--ink);
-    color:var(--paper);
+  .btn-solid:hover {
+    background: var(--rec);
+    border-color: var(--rec);
+    color: #fff;
   }
 
   /* ---------- phone frame ---------- */
-
-  .phone{
-    position:relative;
-    width:100%;
-    max-width:300px;
-    aspect-ratio:9/16;
-    background:var(--ink);
-    border-radius:30px;
-    padding:10px;
-    box-shadow:0 30px 60px -20px rgba(19,19,24,0.35);
-    margin-left:auto;
+  .phone {
+    position: relative;
+    width: 100%;
+    max-width: 300px;
+    aspect-ratio: 9/16;
+    background: var(--ink);
+    border-radius: 30px;
+    padding: 10px;
+    box-shadow: 0 30px 60px -20px rgba(19,19,24,0.35);
+    margin-left: auto;
   }
 
-  .phone-screen{
-    position:relative;
-    width:100%;
-    height:100%;
-    border-radius:22px;
-    overflow:hidden;
-
-    background:
-      repeating-linear-gradient(
-        135deg,
-        rgba(255,255,255,0.05) 0 2px,
-        transparent 2px 14px
-      ),
-      linear-gradient(
-        165deg,
-        #24242C 0%,
-        #131318 60%,
-        #0C0C10 100%
-      );
-
-    display:flex;
-    flex-direction:column;
-    justify-content:space-between;
+  .phone-screen {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border-radius: 22px;
+    overflow: hidden;
+    background: #131318;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
   }
 
-  .phone-notch{
-    position:absolute;
-    top:8px;
-    left:50%;
-    transform:translateX(-50%);
-    width:70px;
-    height:18px;
-    background:var(--ink);
-    border-radius:100px;
-    z-index:3;
+  .phone-notch {
+    position: absolute;
+    top: 8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 70px;
+    height: 18px;
+    background: var(--ink);
+    border-radius: 100px;
+    z-index: 3;
   }
 
-  .phone-play{
-    position:absolute;
-    top:50%;
-    left:50%;
-    transform:translate(-50%,-50%);
-    width:54px;
-    height:54px;
-    border-radius:50%;
-    background:rgba(255,255,255,0.12);
-    border:1.5px solid rgba(255,255,255,0.4);
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    transition:opacity .2s ease;
+  .phone-play {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 54px;
+    height: 54px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.12);
+    border: 1.5px solid rgba(255,255,255,0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity .2s ease;
   }
 
-  .phone-play svg{
-    width:16px;
-    height:16px;
-    margin-left:2px;
+  .phone-play svg {
+    width: 16px;
+    height: 16px;
+    margin-left: 2px;
   }
 
-  .phone-caption{
-    position:relative;
-    z-index:2;
-    padding:16px 14px 14px;
-    background:linear-gradient(
-      0deg,
-      rgba(0,0,0,0.55),
+  .phone-caption {
+    position: relative;
+    z-index: 2;
+    padding: 16px 14px 14px;
+    background: linear-gradient(0deg, rgba(0,0,0,0.55), transparent);
+  }
+
+  .phone-caption p {
+    color: #fff;
+    font-size: 13.5px;
+    font-weight: 600;
+    line-height: 1.35;
+    margin-bottom: 10px;
+  }
+
+  .phone-scrub {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-family: var(--font-mono);
+    font-size: 10px;
+    color: rgba(255,255,255,0.7);
+  }
+
+  .phone-scrub .bar {
+    flex: 1;
+    height: 3px;
+    background: rgba(255,255,255,0.25);
+    border-radius: 3px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .phone-scrub .bar::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 38%;
+    background: var(--rec);
+  }
+
+  .phone-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+  }
+
+  .phone-caption,
+  .phone-play,
+  .phone-notch {
+    position: relative;
+    z-index: 2;
+  }
+
+  /* ---------- generic section ---------- */
+  section {
+    padding: 84px 0;
+    border-top: 1px solid var(--line);
+  }
+
+  .section-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 24px;
+    margin-bottom: 46px;
+    flex-wrap: wrap;
+  }
+
+  .section-tag {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    color: var(--signal);
+    margin-bottom: 10px;
+    display: block;
+  }
+
+  .section-title {
+    font-family: var(--font-display);
+    font-weight: 400;
+    text-transform: uppercase;
+    font-size: clamp(28px, 3.4vw, 42px);
+    letter-spacing: -0.01em;
+    max-width: 640px;
+  }
+
+  .section-note {
+    font-size: 14.5px;
+    color: var(--ink-soft);
+    max-width: 280px;
+  }
+
+  /* ---------- work grid ---------- */
+  .work-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 22px;
+  }
+
+  .reel-card {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .reel-card .phone {
+    max-width: 100%;
+    margin-left: 0;
+  }
+
+  .reel-meta {
+    padding: 0 2px;
+  }
+
+  .reel-meta .k {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    color: var(--ink-soft);
+    letter-spacing: .04em;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 4px;
+  }
+
+  .reel-meta .v {
+    font-size: 14.5px;
+    font-weight: 600;
+  }
+
+  .work-footnote {
+    margin-top: 34px;
+    font-size: 13.5px;
+    color: var(--ink-soft);
+    border-left: 2px solid var(--amber);
+    padding-left: 14px;
+    max-width: 620px;
+  }
+
+  /* ---------- BRANDS TICKER ---------- */
+  .brands-section {
+    padding: 60px 0;
+    border-top: 1px solid var(--line);
+    text-align: center;
+    overflow: hidden;
+  }
+
+  .brands-tagline {
+    font-family: var(--font-mono);
+    font-size: 11.5px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    margin-bottom: 28px;
+  }
+
+  .logo-slider {
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    white-space: nowrap;
+    mask-image: linear-gradient(
+      to right,
+      transparent,
+      black 15%,
+      black 85%,
+      transparent
+    );
+    -webkit-mask-image: linear-gradient(
+      to right,
+      transparent,
+      black 15%,
+      black 85%,
       transparent
     );
   }
 
-  .phone-caption p{
-    color:#fff;
-    font-size:13.5px;
-    font-weight:600;
-    line-height:1.35;
-    margin-bottom:10px;
+  .logo-track {
+    display: inline-flex;
+    align-items: center;
+    gap: 60px;
+    width: max-content;
+    animation: scrollLogos 20s linear infinite;
   }
 
-  .phone-scrub{
-    display:flex;
-    align-items:center;
-    gap:8px;
-    font-family:var(--font-mono);
-    font-size:10px;
-    color:rgba(255,255,255,0.7);
+  .logo-slider:hover .logo-track {
+    animation-play-state: paused;
   }
 
-  .phone-scrub .bar{
-    flex:1;
-    height:3px;
-    background:rgba(255,255,255,0.25);
-    border-radius:3px;
-    position:relative;
-    overflow:hidden;
+  .logo-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
-  .phone-scrub .bar::after{
-    content:'';
-    position:absolute;
-    left:0;
-    top:0;
-    bottom:0;
-    width:38%;
-    background:var(--rec);
+  .logo-item img {
+    height: 32px;
+    width: auto;
+    object-fit: contain;
+    opacity: 0.45;
+    filter: grayscale(100%);
+    transition: opacity 0.25s ease, filter 0.25s ease, transform 0.25s ease;
   }
 
-  .phone-badge{
-    position:absolute;
-    top:16px;
-    left:16px;
-    z-index:3;
-    font-family:var(--font-mono);
-    font-size:9.5px;
-    letter-spacing:.06em;
-    color:rgba(255,255,255,0.75);
-    background:rgba(255,255,255,0.1);
-    border:1px solid rgba(255,255,255,0.2);
-    padding:5px 9px;
-    border-radius:100px;
+  .logo-item img:hover {
+    opacity: 1;
+    filter: grayscale(0%);
+    transform: scale(1.05);
   }
 
-  /* ---------- phone media ---------- */
-
-  .phone-video{
-    position:absolute;
-    top:0;
-    left:0;
-    width:100%;
-    height:100%;
-    object-fit:cover;
-    z-index:1;
+  @keyframes scrollLogos {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
   }
 
-  .phone-caption,
-  .phone-badge,
-  .phone-play,
-  .phone-notch{
-    position:relative;
-    z-index:2;
+  /* ---------- process (redesigned) ---------- */
+  .process-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
   }
 
-  /* ---------- generic section ---------- */
-
-  section{
-    padding:84px 0;
-    border-top:1px solid var(--line);
+  .process-row {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    gap: 32px;
+    padding: 24px 28px;
+    background: rgba(255, 255, 255, 0.45);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    transition: all 0.25s ease;
+    align-items: flex-start;
   }
 
-  .section-head{
-    display:flex;
-    justify-content:space-between;
-    align-items:flex-end;
-    gap:24px;
-    margin-bottom:46px;
-    flex-wrap:wrap;
+  .process-row:hover {
+    background: #ffffff;
+    border-color: var(--line-strong);
+    transform: translateY(-2px);
+    box-shadow: 0 16px 32px -12px rgba(19, 19, 24, 0.08);
   }
 
-  .section-tag{
-    font-family:var(--font-mono);
-    font-size:12px;
-    letter-spacing:.08em;
-    text-transform:uppercase;
-    color:var(--signal);
-    margin-bottom:10px;
-    display:block;
+  .process-meta {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
   }
 
-  .section-title{
-    font-family:var(--font-display);
-    font-weight:400;
-    text-transform:uppercase;
-    font-size:clamp(28px,3.4vw,42px);
-    letter-spacing:-0.01em;
-    max-width:640px;
+  .process-step {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    color: var(--ink-soft);
+    text-transform: uppercase;
   }
 
-  .section-note{
-    font-size:14.5px;
-    color:var(--ink-soft);
-    max-width:280px;
+  .process-time {
+    font-family: var(--font-mono);
+    font-size: 14px;
+    color: var(--rec);
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
   }
 
-  /* ---------- work grid ---------- */
-
-  .work-grid{
-    display:grid;
-    grid-template-columns:repeat(4,1fr);
-    gap:22px;
+  .process-time::before {
+    content: '';
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--rec);
+    display: inline-block;
   }
 
-  .reel-card{
-    display:flex;
-    flex-direction:column;
-    gap:14px;
+  .process-title {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 8px;
+    color: var(--ink);
   }
 
-  .reel-card .phone{
-    max-width:100%;
-    margin-left:0;
+  .process-desc {
+    font-size: 14.5px;
+    color: var(--ink-soft);
+    line-height: 1.6;
+    margin-bottom: 14px;
   }
 
-  .reel-meta{
-    padding:0 2px;
+  .process-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
   }
 
-  .reel-meta .k{
-    font-family:var(--font-mono);
-    font-size:11px;
-    color:var(--ink-soft);
-    letter-spacing:.04em;
-    text-transform:uppercase;
-    display:block;
-    margin-bottom:4px;
-  }
-
-  .reel-meta .v{
-    font-size:14.5px;
-    font-weight:600;
-  }
-
-  .work-footnote{
-    margin-top:34px;
-    font-size:13.5px;
-    color:var(--ink-soft);
-    border-left:2px solid var(--amber);
-    padding-left:14px;
-    max-width:620px;
-  }
-
-  /* ---------- process ---------- */
-
-  .process-list{
-    display:flex;
-    flex-direction:column;
-  }
-
-  .process-row{
-    display:grid;
-    grid-template-columns:150px 1fr;
-    gap:30px;
-    padding:26px 0;
-    border-top:1px solid var(--line);
-    align-items:baseline;
-  }
-
-  .process-row:first-child{
-    border-top:none;
-  }
-
-  .process-time{
-    font-family:var(--font-mono);
-    font-size:14px;
-    color:var(--rec);
-    font-weight:600;
-  }
-
-  .process-title{
-    font-size:19px;
-    font-weight:700;
-    margin-bottom:6px;
-  }
-
-  .process-desc{
-    font-size:14.5px;
-    color:var(--ink-soft);
-    max-width:560px;
+  .p-tag {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    padding: 4px 10px;
+    border-radius: 100px;
+    background: var(--paper-2);
+    border: 1px solid var(--line-strong);
+    color: var(--ink);
+    font-weight: 500;
   }
 
   /* ---------- tools ---------- */
-
-  /*
-    Reduced only the spacing for the Tools section.
-    The original chip styling is preserved.
-  */
-
-  #tools{
-    padding-top:64px;
-    padding-bottom:64px;
+  #tools {
+    padding-top: 64px;
+    padding-bottom: 64px;
   }
 
-  #tools .section-head{
-    margin-bottom:30px;
+  #tools .section-head {
+    margin-bottom: 30px;
   }
 
-  .tools-grid{
-    display:flex;
-    flex-wrap:wrap;
-    gap:10px;
+  .tools-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
   }
 
-  .chip{
-    font-family:var(--font-mono);
-    font-size:13px;
-    letter-spacing:.02em;
-    padding:11px 18px;
-    border-radius:100px;
-    border:1.5px solid var(--line-strong);
-    background:var(--paper-2);
+  .chip {
+    font-family: var(--font-mono);
+    font-size: 13px;
+    letter-spacing: .02em;
+    padding: 11px 18px;
+    border-radius: 100px;
+    border: 1.5px solid var(--line-strong);
+    background: var(--paper-2);
   }
 
   /* ---------- contact ---------- */
-
-  .contact{
-    text-align:center;
-    padding:110px 0 100px;
+  .contact {
+    text-align: center;
+    padding: 110px 0 100px;
   }
 
-  .contact .section-tag{
-    display:flex;
-    justify-content:center;
+  .contact .section-tag {
+    display: flex;
+    justify-content: center;
   }
 
-  .contact h2{
-    font-family:var(--font-display);
-    font-weight:400;
-    text-transform:uppercase;
-    font-size:clamp(32px,6vw,64px);
-    line-height:1.02;
-    margin:0 auto 30px;
-    max-width:780px;
+  .contact h2 {
+    font-family: var(--font-display);
+    font-weight: 400;
+    text-transform: uppercase;
+    font-size: clamp(32px, 6vw, 64px);
+    line-height: 1.02;
+    margin: 0 auto 30px;
+    max-width: 780px;
   }
 
-  .email-row{
-    display:inline-flex;
-    align-items:center;
-    gap:14px;
-    background:var(--ink);
-    color:var(--paper);
-    padding:16px 16px 16px 26px;
-    border-radius:100px;
-    font-family:var(--font-mono);
-    font-size:15px;
-    flex-wrap:wrap;
-    justify-content:center;
+  .email-row {
+    display: inline-flex;
+    align-items: center;
+    gap: 14px;
+    background: var(--ink);
+    color: var(--paper);
+    padding: 16px 16px 16px 26px;
+    border-radius: 100px;
+    font-family: var(--font-mono);
+    font-size: 15px;
+    flex-wrap: wrap;
+    justify-content: center;
   }
 
-  .email-row button{
-    font-family:var(--font-mono);
-    font-size:12.5px;
-    background:var(--rec);
-    color:#fff;
-    border:none;
-    padding:10px 16px;
-    border-radius:100px;
-    cursor:pointer;
-    transition:background .15s ease;
+  .email-row button {
+    font-family: var(--font-mono);
+    font-size: 12.5px;
+    background: var(--rec);
+    color: #fff;
+    border: none;
+    padding: 10px 16px;
+    border-radius: 100px;
+    cursor: pointer;
+    transition: background .15s ease;
   }
 
-  .email-row button:hover{
-    background:#E23125;
+  .email-row button:hover {
+    background: #E23125;
   }
 
-  footer{
-    border-top:1px solid var(--line);
-    padding:26px 0;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    font-family:var(--font-mono);
-    font-size:12px;
-    color:var(--ink-soft);
-    flex-wrap:wrap;
-    gap:10px;
+  footer {
+    border-top: 1px solid var(--line);
+    padding: 26px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: var(--font-mono);
+    font-size: 12px;
+    color: var(--ink-soft);
+    flex-wrap: wrap;
+    gap: 10px;
   }
 
-  /* ---------- other creative ad formats ---------- */
-
-  .creative-formats-grid{
-    grid-template-columns:repeat(3,1fr);
+  /* ---------- other creative formats ---------- */
+  .creative-formats-grid {
+    grid-template-columns: repeat(3, 1fr);
   }
 
-  .format-card .reel-meta{
-    padding-top:2px;
+  .format-card .reel-meta {
+    padding-top: 2px;
   }
 
-  .format-placeholder{
-    position:relative;
-    aspect-ratio:9/16;
-    width:100%;
-    border-radius:30px;
-    overflow:hidden;
-
-    background:
-      repeating-linear-gradient(
-        135deg,
-        rgba(255,255,255,0.035) 0 2px,
-        transparent 2px 14px
-      ),
-      linear-gradient(
-        160deg,
-        #24242C 0%,
-        #131318 65%,
-        #0C0C10 100%
-      );
-
-    color:#fff;
-    display:flex;
-    flex-direction:column;
-    justify-content:flex-end;
-    padding:22px;
-    box-shadow:0 30px 60px -20px rgba(19,19,24,0.28);
-  }
-
-  .format-icon{
-    font-family:var(--font-mono);
-    font-size:12px;
-    color:var(--amber);
-    letter-spacing:.08em;
-    margin-bottom:auto;
-  }
-
-  .format-label{
-    font-family:var(--font-display);
-    font-size:clamp(30px,4vw,46px);
-    line-height:.95;
-    text-transform:uppercase;
-    max-width:220px;
-  }
-
-  .format-status{
-    font-family:var(--font-mono);
-    font-size:9px;
-    letter-spacing:.08em;
-    color:rgba(255,255,255,.58);
-    margin-top:12px;
-  }
-
-  .format-desc{
-    font-size:13.5px;
-    line-height:1.5;
-    color:var(--ink-soft);
-    margin-top:8px;
-    max-width:360px;
+  .format-desc {
+    font-size: 13.5px;
+    line-height: 1.5;
+    color: var(--ink-soft);
+    margin-top: 8px;
+    max-width: 360px;
   }
 
   /* ---------- responsive ---------- */
+  @media (max-width: 900px) {
+    .rail { display: none; }
+    .hero { grid-template-columns: 1fr; padding-top: 60px; }
+    .hero .phone { margin: 0 auto; max-width: 240px; }
+    .work-grid { grid-template-columns: repeat(2, 1fr); }
+    .creative-formats-grid { grid-template-columns: repeat(2, 1fr); }
+    .nav-links { display: none; }
+  }
 
-  @media (max-width:900px){
-
-    .rail{
-      display:none;
-    }
-
-    .hero{
-      grid-template-columns:1fr;
-      padding-top:60px;
-    }
-
-    .hero .phone{
-      margin:0 auto;
-      max-width:240px;
-    }
-
-    .work-grid{
-      grid-template-columns:repeat(2,1fr);
-    }
-
-    .creative-formats-grid{
-      grid-template-columns:repeat(2,1fr);
-    }
-
-    .nav-links{
-      display:none;
+  @media (max-width: 768px) {
+    .process-row {
+      grid-template-columns: 1fr;
+      gap: 12px;
+      padding: 20px;
     }
   }
 
-  @media (max-width:560px){
-
-    .work-grid{
-      grid-template-columns:1fr;
-    }
-
-    .creative-formats-grid{
-      grid-template-columns:1fr;
-    }
-
-    .process-row{
-      grid-template-columns:1fr;
-      gap:6px;
-    }
+  @media (max-width: 560px) {
+    .work-grid { grid-template-columns: 1fr; }
+    .creative-formats-grid { grid-template-columns: 1fr; }
   }
 
-  @media (prefers-reduced-motion:reduce){
-
-    *{
-      animation:none !important;
-      transition:none !important;
-      scroll-behavior:auto !important;
+  @media (prefers-reduced-motion: reduce) {
+    * {
+      animation: none !important;
+      transition: none !important;
+      scroll-behavior: auto !important;
     }
   }
 </style>
@@ -852,1245 +835,635 @@
 <div class="progress-bar" id="progressBar"></div>
 
 <!-- ================= HEADER ================= -->
-
 <header>
   <div class="nav wrap">
-
-    <div class="logo">
-      KLINT<span>.</span>MARINO
-    </div>
-
+    <div class="logo">KLINT<span>.</span>MARINO</div>
     <nav class="nav-links">
       <a href="#work">Work</a>
+      <a href="#brands">Brands</a>
       <a href="#process">Process</a>
       <a href="#ugc-types">UGC Works</a>
       <a href="#creative-formats">Ad Formats</a>
       <a href="#tools">Tools</a>
     </nav>
-
     <a class="nav-cta" href="#contact">
       <span class="dot"></span>
       Contact Klint
     </a>
-
   </div>
 </header>
 
-<!-- ================= TIMEcode RAIL ================= -->
-
+<!-- ================= TIMECODE RAIL ================= -->
 <nav class="rail" id="rail">
-
   <a href="#hero" class="rail-item" data-target="hero">
     <span class="tick"></span>
     <span class="label">00:00 INTRO</span>
   </a>
-
   <a href="#work" class="rail-item" data-target="work">
     <span class="tick"></span>
     <span class="label">00:14 PORTFOLIO</span>
   </a>
-
+  <a href="#brands" class="rail-item" data-target="brands">
+    <span class="tick"></span>
+    <span class="label">00:26 BRANDS</span>
+  </a>
   <a href="#process" class="rail-item" data-target="process">
     <span class="tick"></span>
     <span class="label">00:32 WORKFLOW</span>
   </a>
-
   <a href="#ugc-types" class="rail-item" data-target="ugc-types">
     <span class="tick"></span>
     <span class="label">00:48 UGC WORKS</span>
   </a>
-
   <a href="#creative-formats" class="rail-item" data-target="creative-formats">
     <span class="tick"></span>
     <span class="label">01:02 AD FORMATS</span>
   </a>
-
   <a href="#tools" class="rail-item" data-target="tools">
     <span class="tick"></span>
     <span class="label">01:12 STACK</span>
   </a>
-
   <a href="#contact" class="rail-item" data-target="contact">
     <span class="tick"></span>
     <span class="label">01:15 CONTACT</span>
   </a>
-
 </nav>
 
 <main class="wrap">
 
   <!-- ================= HERO ================= -->
-
   <section id="hero" style="border-top:none; padding-bottom:90px;" class="hero">
-
     <div>
-
       <div class="eyebrow">
         <span class="rec-dot"></span>
         AI UGC AD EDITOR — DTC
       </div>
-
       <h1>
         I turn raw footage into ads that
         <span class="mark">stop the scroll.</span>
       </h1>
-
       <p class="hero-sub">
         Klint Marino here. I edit UGC-style, AI voice &amp; avatar ads for DTC brands —
         built around a real hook, paced for retention, and cut for whatever
         platform's actually running the spend.
         <strong>No FLuff, No AI FLOP, just ads that convert.</strong>
       </p>
-
       <div class="cta-row">
-        <a class="btn btn-solid" href="#ugc-types">
-          See my work
-        </a>
+        <a class="btn btn-solid" href="#ugc-types">See my work</a>
       </div>
-
     </div>
 
     <div class="phone">
-
       <div class="phone-screen">
-
         <div class="phone-notch"></div>
-
         <video
           class="phone-video"
-          src="https://res.cloudinary.com/pot1alz4/video/upload/v1788186226/1000060291.mp4"
-          loop
-          muted
-          playsinline>
+          src="https://res.cloudinary.com/pot1alz4/video/upload/v1790010607/Brief3-2_1.mp4"
+          loop muted playsinline>
         </video>
-
         <div class="phone-play">
-          <svg viewBox="0 0 24 24" fill="white">
-            <polygon points="6,4 20,12 6,20"/>
-          </svg>
+          <svg viewBox="0 0 24 24" fill="white"><polygon points="6,4 20,12 6,20"/></svg>
         </div>
-
         <div class="phone-caption">
-          <p>
-            "POV: you've been doing this wrong the whole time 👇"
-          </p>
-
+          <p>"50+ Parents Asked Me Where I Got This"</p>
           <div class="phone-scrub">
             <span>00:03</span>
             <span class="bar"></span>
             <span>00:15</span>
           </div>
         </div>
-
       </div>
-
     </div>
-
   </section>
 
-
   <!-- ================= WORK ================= -->
-
   <section id="work">
-
     <div class="section-head">
-
       <div>
-        <span class="section-tag">
-          Reels — 00:14
-        </span>
-
-        <h2 class="section-title">
-          Concept Portfolio
-        </h2>
+        <span class="section-tag">Reels — 00:14</span>
+        <h2 class="section-title">Concept Portfolio</h2>
       </div>
-
       <p class="section-note">
         High-converting direct-response edits for clean beauty brands.
         Hover or tap to view pacing.
       </p>
-
     </div>
 
     <div class="work-grid">
-
       <!-- Card 1 -->
-
       <div class="reel-card">
-
         <div class="phone">
-
           <div class="phone-screen">
-
             <div class="phone-notch"></div>
-
-            <img
-              class="phone-video"
-              src="https://res.cloudinary.com/pot1alz4/image/upload/v1787941145/Video1_talking_head.gif"
-              alt="Talking Head Hook">
-
-            <div class="phone-play">
-              <svg viewBox="0 0 24 24" fill="white">
-                <polygon points="6,4 20,12 6,20"/>
-              </svg>
-            </div>
-
+            <img class="phone-video" src="https://res.cloudinary.com/pot1alz4/image/upload/v1787941145/Video1_talking_head.gif" alt="Talking Head Hook">
+            <div class="phone-play"><svg viewBox="0 0 24 24" fill="white"><polygon points="6,4 20,12 6,20"/></svg></div>
             <div class="phone-caption">
-
-              <p>
-                "Wait... you've been applying your lip gloss wrong this whole time 😳"
-              </p>
-
-              <div class="phone-scrub">
-                <span>00:03</span>
-                <span class="bar"></span>
-                <span>00:15</span>
-              </div>
-
+              <p>"Wait... you've been applying your lip gloss wrong this whole time 😳"</p>
+              <div class="phone-scrub"><span>00:03</span><span class="bar"></span><span>00:15</span></div>
             </div>
-
           </div>
-
         </div>
-
         <div class="reel-meta">
           <span class="k">Format</span>
           <span class="v">Talking Head Hook</span>
         </div>
-
       </div>
 
-
       <!-- Card 2 -->
-
       <div class="reel-card">
-
         <div class="phone">
-
           <div class="phone-screen">
-
             <div class="phone-notch"></div>
-
-            <img
-              class="phone-video"
-              src="https://res.cloudinary.com/pot1alz4/image/upload/v1787941145/Video2_product_reveal.gif"
-              alt="Product Reveal">
-
-            <div class="phone-play">
-              <svg viewBox="0 0 24 24" fill="white">
-                <polygon points="6,4 20,12 6,20"/>
-              </svg>
-            </div>
-
+            <img class="phone-video" src="https://res.cloudinary.com/pot1alz4/image/upload/v1787941145/Video2_product_reveal.gif" alt="Product Reveal">
+            <div class="phone-play"><svg viewBox="0 0 24 24" fill="white"><polygon points="6,4 20,12 6,20"/></svg></div>
             <div class="phone-caption">
-
-              <p>
-                "Unboxing the aesthetic packaging of my dreams..."
-              </p>
-
-              <div class="phone-scrub">
-                <span>00:02</span>
-                <span class="bar"></span>
-                <span>00:18</span>
-              </div>
-
+              <p>"Unboxing the aesthetic packaging of my dreams..."</p>
+              <div class="phone-scrub"><span>00:02</span><span class="bar"></span><span>00:18</span></div>
             </div>
-
           </div>
-
         </div>
-
         <div class="reel-meta">
           <span class="k">Format</span>
           <span class="v">Aesthetic Product Reveal</span>
         </div>
-
       </div>
 
-
       <!-- Card 3 -->
-
       <div class="reel-card">
-
         <div class="phone">
-
           <div class="phone-screen">
-
             <div class="phone-notch"></div>
-
-            <img
-              class="phone-video"
-              src="https://res.cloudinary.com/pot1alz4/image/upload/v1787941145/Video3_application.gif"
-              alt="Application">
-
-            <div class="phone-play">
-              <svg viewBox="0 0 24 24" fill="white">
-                <polygon points="6,4 20,12 6,20"/>
-              </svg>
-            </div>
-
+            <img class="phone-video" src="https://res.cloudinary.com/pot1alz4/image/upload/v1787941145/Video3_application.gif" alt="Application">
+            <div class="phone-play"><svg viewBox="0 0 24 24" fill="white"><polygon points="6,4 20,12 6,20"/></svg></div>
             <div class="phone-caption">
-
-              <p>
-                "This formula is so creamy it literally melts onto your skin"
-              </p>
-
-              <div class="phone-scrub">
-                <span>00:04</span>
-                <span class="bar"></span>
-                <span>00:22</span>
-              </div>
-
+              <p>"This formula is so creamy it literally melts onto your skin"</p>
+              <div class="phone-scrub"><span>00:04</span><span class="bar"></span><span>00:22</span></div>
             </div>
-
           </div>
-
         </div>
-
         <div class="reel-meta">
           <span class="k">Format</span>
           <span class="v">Application Tutorial</span>
         </div>
-
       </div>
 
-
       <!-- Card 4 -->
-
       <div class="reel-card">
-
         <div class="phone">
-
           <div class="phone-screen">
-
             <div class="phone-notch"></div>
-
-            <img
-              class="phone-video"
-              src="https://res.cloudinary.com/pot1alz4/image/upload/v1787941145/Video4_gloss_cta.gif"
-              alt="Gloss Close-up CTA">
-
-            <div class="phone-play">
-              <svg viewBox="0 0 24 24" fill="white">
-                <polygon points="6,4 20,12 6,20"/>
-              </svg>
-            </div>
-
+            <img class="phone-video" src="https://res.cloudinary.com/pot1alz4/image/upload/v1787941145/Video4_gloss_cta.gif" alt="Gloss Close-up CTA">
+            <div class="phone-play"><svg viewBox="0 0 24 24" fill="white"><polygon points="6,4 20,12 6,20"/></svg></div>
             <div class="phone-caption">
-
-              <p>
-                "The ultimate high-shine finish. Link in bio to grab yours! 💋"
-              </p>
-
-              <div class="phone-scrub">
-                <span>00:01</span>
-                <span class="bar"></span>
-                <span>00:20</span>
-              </div>
-
+              <p>"The ultimate high-shine finish. Link in bio to grab yours! 💋"</p>
+              <div class="phone-scrub"><span>00:01</span><span class="bar"></span><span>00:20</span></div>
             </div>
-
           </div>
-
         </div>
-
         <div class="reel-meta">
           <span class="k">Format</span>
           <span class="v">Close-Up Gloss &amp; CTA</span>
         </div>
-
       </div>
-
     </div>
 
     <p class="work-footnote">
       Each concept is strategically mapped to maximize DTC ad account retention.
       Hover or tap any screen to view the pacing and overlays.
     </p>
-
   </section>
 
+  <!-- ================= BRANDS SECTION ================= -->
+  <section id="brands" class="brands-section">
+    <p class="brands-tagline">Brands &amp; DTC Accounts I've Built Content For</p>
+    <div class="logo-slider">
+      <div class="logo-track">
+        <!-- Set 1 -->
+        <div class="logo-item"><img src="https://res.cloudinary.com/pot1alz4/image/upload/v1790013294/Screenshot_2026-09-22_015327-removebg-preview.png" alt="Block Blaster"></div>
+        <div class="logo-item"><img src="https://res.cloudinary.com/pot1alz4/image/upload/v1790013529/1.png" alt="Keyla"></div>
+        <div class="logo-item"><img src="https://res.cloudinary.com/pot1alz4/image/upload/v1790013590/image-removebg-preview_4.png" alt="Deckwright"></div>
+        <div class="logo-item"><img src="https://res.cloudinary.com/pot1alz4/image/upload/v1790013830/image-removebg-preview_5.png" alt="Evoliya"></div>
+        <div class="logo-item"><img src="https://res.cloudinary.com/pot1alz4/image/upload/v1790013945/Screenshot_2026-09-22_020515.png" alt="EveCurls"></div>
+        <div class="logo-item"><img src="https://res.cloudinary.com/pot1alz4/image/upload/v1790014039/fec2145a-93c9-49da-81ed-210a0ed12ec1.png" alt="LGbeauty"></div>
+
+        <!-- Set 2 (Duplicate for smooth infinite loop) -->
+        <div class="logo-item"><img src="https://res.cloudinary.com/pot1alz4/image/upload/v1790013294/Screenshot_2026-09-22_015327-removebg-preview.png" alt="Block Blaster"></div>
+        <div class="logo-item"><img src="https://res.cloudinary.com/pot1alz4/image/upload/v1790013529/1.png" alt="Keyla"></div>
+        <div class="logo-item"><img src="https://res.cloudinary.com/pot1alz4/image/upload/v1790013590/image-removebg-preview_4.png" alt="Deckwright"></div>
+        <div class="logo-item"><img src="https://res.cloudinary.com/pot1alz4/image/upload/v1790013830/image-removebg-preview_5.png" alt="Evoliya"></div>
+        <div class="logo-item"><img src="https://res.cloudinary.com/pot1alz4/image/upload/v1790013945/Screenshot_2026-09-22_020515.png" alt="EveCurls"></div>
+        <div class="logo-item"><img src="https://res.cloudinary.com/pot1alz4/image/upload/v1790014039/fec2145a-93c9-49da-81ed-210a0ed12ec1.png" alt="LGbeauty"></div>
+        <!-- Set 2 (Duplicate for smooth infinite loop) -->
+
+        <div class="logo-item"><img src="https://res.cloudinary.com/pot1alz4/image/upload/v1790013294/Screenshot_2026-09-22_015327-removebg-preview.png" alt="Block Blaster"></div>
+        <div class="logo-item"><img src="https://res.cloudinary.com/pot1alz4/image/upload/v1790013529/1.png" alt="Keyla"></div>
+        <div class="logo-item"><img src="https://res.cloudinary.com/pot1alz4/image/upload/v1790013590/image-removebg-preview_4.png" alt="Deckwright"></div>
+        <div class="logo-item"><img src="https://res.cloudinary.com/pot1alz4/image/upload/v1790013830/image-removebg-preview_5.png" alt="Evoliya"></div>
+        <div class="logo-item"><img src="https://res.cloudinary.com/pot1alz4/image/upload/v1790013945/Screenshot_2026-09-22_020515.png" alt="EveCurls"></div>
+        <div class="logo-item"><img src="https://res.cloudinary.com/pot1alz4/image/upload/v1790014039/fec2145a-93c9-49da-81ed-210a0ed12ec1.png" alt="LGbeauty"></div>
+
+        <!-- Set 2 (Duplicate for smooth infinite loop) -->
+        <div class="logo-item"><img src="https://res.cloudinary.com/pot1alz4/image/upload/v1790013294/Screenshot_2026-09-22_015327-removebg-preview.png" alt="Block Blaster"></div>
+        <div class="logo-item"><img src="https://res.cloudinary.com/pot1alz4/image/upload/v1790013529/1.png" alt="Keyla"></div>
+        <div class="logo-item"><img src="https://res.cloudinary.com/pot1alz4/image/upload/v1790013590/image-removebg-preview_4.png" alt="Deckwright"></div>
+        <div class="logo-item"><img src="https://res.cloudinary.com/pot1alz4/image/upload/v1790013830/image-removebg-preview_5.png" alt="Evoliya"></div>
+        <div class="logo-item"><img src="https://res.cloudinary.com/pot1alz4/image/upload/v1790013945/Screenshot_2026-09-22_020515.png" alt="EveCurls"></div>
+        <div class="logo-item"><img src="https://res.cloudinary.com/pot1alz4/image/upload/v1790014039/fec2145a-93c9-49da-81ed-210a0ed12ec1.png" alt="LGbeauty"></div>
+      </div>
+    </div>
+  </section>
 
   <!-- ================= PROCESS ================= -->
-
   <section id="process">
-
     <div class="section-head">
-
       <div>
-
         <span class="section-tag">
           Workflow — 00:32
         </span>
-
         <h2 class="section-title">
-          How a reel actually gets built
+          How I make each ad in 5 Steps
         </h2>
-
       </div>
 
       <p class="section-note">
-        Timed the way the ad itself will be paced —
-        first 3 seconds do the heavy lifting.
+        A simple step-by-step look at how I take an idea and turn it into a high-converting video.
       </p>
-
     </div>
-
 
     <div class="process-list">
 
+      <!-- Step 1 -->
       <div class="process-row">
-
-        <span class="process-time">
-          00:00–00:03
-        </span>
-
-        <div>
-          <div class="process-title">
-            Hook &amp; script
-          </div>
-
-          <p class="process-desc">
-            Write the first line before anything else.
-            If it doesn't earn the next second, nothing after it matters.
-          </p>
+        <div class="process-meta">
+          <span class="process-step">Step 01 // Research</span>
+          <span class="process-time">00:00–00:04</span>
         </div>
-
+        <div>
+          <div class="process-title">Brief &amp; Idea Research</div>
+          <p class="process-desc">
+            I start by reading the client brief, SOP and guidelines to understand the product and audience. Then I use ChatGPT and Claude to find strong angles and for research.
+          </p>
+          <div class="process-tags">
+            <span class="p-tag">Client Brief</span>
+            <span class="p-tag">ChatGPT</span>
+            <span class="p-tag">Claude</span>
+          </div>
+        </div>
       </div>
 
-
+      <!-- Step 2 -->
       <div class="process-row">
-
-        <span class="process-time">
-          00:03–00:06
-        </span>
-
-        <div>
-
-          <div class="process-title">
-            AI voice or avatar
-          </div>
-
-          <p class="process-desc">
-            Generate the read with ElevenLabs or a HeyGen avatar,
-            matched to the brand's tone — casual, not "AI-sounding."
-          </p>
-
+        <div class="process-meta">
+          <span class="process-step">Step 02 // Avatar</span>
+          <span class="process-time">00:04–00:08</span>
         </div>
-
+        <div>
+          <div class="process-title">Creating the AI Character</div>
+          <p class="process-desc">
+            For realistic UGC, I set up a high-quality avatar with clear rules for looks, personality, and tone. I use Google Flow for realistic talking heads and its built-in AI audio settings for natural voices.
+          </p>
+          <div class="process-tags">
+            <span class="p-tag">GoogleFlow</span>
+            <span class="p-tag">Character Setup</span>
+            <span class="p-tag">Voice Tone</span>
+          </div>
+        </div>
       </div>
 
-
+      <!-- Step 3 -->
       <div class="process-row">
-
-        <span class="process-time">
-          00:06–00:14
-        </span>
-
-        <div>
-
-          <div class="process-title">
-            Edit &amp; pace
-          </div>
-
-          <p class="process-desc">
-            Cut for retention: jump cuts, b-roll,
-            on-screen text timed to speech, zero dead air.
-          </p>
-
+        <div class="process-meta">
+          <span class="process-step">Step 03 // Video</span>
+          <span class="process-time">00:08–00:14</span>
         </div>
-
+        <div>
+          <div class="process-title">Generating Scenes &amp; B-Roll</div>
+          <p class="process-desc">
+            Once the character is ready, I write detailed master prompts in Claude and ChatGPT. I use Google Flow and Higgsfield to generate specific camera angles, body movements, and b-roll clips that match.
+          </p>
+          <div class="process-tags">
+            <span class="p-tag">Google Flow</span>
+            <span class="p-tag">Higgsfield</span>
+            <span class="p-tag">Prompts</span>
+            <span class="p-tag">B-Roll</span>
+          </div>
+        </div>
       </div>
 
-
+      <!-- Step 4 -->
       <div class="process-row">
-
-        <span class="process-time">
-          00:14–00:18
-        </span>
-
-        <div>
-
-          <div class="process-title">
-            Captions &amp; sound design
-          </div>
-
-          <p class="process-desc">
-            Auto-captions cleaned up by hand,
-            trending or brand-safe audio layered under the voice track.
-          </p>
-
+        <div class="process-meta">
+          <span class="process-step">Step 04 // Editing</span>
+          <span class="process-time">00:14–00:18</span>
         </div>
-
+        <div>
+          <div class="process-title">Editing &amp; Sound Design</div>
+          <p class="process-desc">
+            I bring everything into CapCut. I cut out pauses, keep the pacing fast, add smooth transitions, design clean captions, and mix sound effects under the voice so people stay hooked.
+          </p>
+          <div class="process-tags">
+            <span class="p-tag">CapCut</span>
+            <span class="p-tag">Fast Pacing</span>
+            <span class="p-tag">Captions</span>
+            <span class="p-tag">Sound FX</span>
+          </div>
+        </div>
       </div>
 
-
+      <!-- Step 5 -->
       <div class="process-row">
-
-        <span class="process-time">
-          00:18–00:20
-        </span>
-
-        <div>
-
-          <div class="process-title">
-            Export per platform
-          </div>
-
-          <p class="process-desc">
-            Separate exports for TikTok, Reels, and Spark Ads specs —
-            not one file stretched across all three.
-          </p>
-
+        <div class="process-meta">
+          <span class="process-step">Step 05 // Export</span>
+          <span class="process-time">00:18–00:20</span>
         </div>
-
+        <div>
+          <div class="process-title">Export for Ads</div>
+          <p class="process-desc">
+            I review the full video, Send to the client, Wait for Feedbacks or suggestions then export clean files fitted for TikTok Spark Ads, Meta Reels, and YouTube Shorts so captions and buttons don't get covered up.
+          </p>
+          <div class="process-tags">
+            <span class="p-tag">TikTok Ads</span>
+            <span class="p-tag">Meta Reels</span>
+            <span class="p-tag">Export Ready</span>
+          </div>
+        </div>
       </div>
 
     </div>
-
   </section>
 
-
   <!-- ================= OTHER UGC WORKS ================= -->
-
   <section id="ugc-types">
-
     <div class="section-head">
-
       <div>
-
-        <span class="section-tag">
-          Other Works — 00:48
-        </span>
-
-        <h2 class="section-title">
-          UGC Campaign Sample Works
-        </h2>
-
+        <span class="section-tag">Other Works — 00:48</span>
+        <h2 class="section-title">UGC Campaign Sample Works</h2>
       </div>
-
-      <p class="section-note">
-        Strategic video structures optimized to drive conversions across
-        different niches. (Ready to host your video links below).
-      </p>
-
+      <p class="section-note">Strategic video structures optimized to drive conversions.</p>
     </div>
 
-
     <div class="work-grid">
-
-
       <!-- Card 1 -->
-
       <div class="reel-card">
-
         <div class="phone">
-
           <div class="phone-screen">
-
             <div class="phone-notch"></div>
-
-            <video
-              class="phone-video"
-              src="https://res.cloudinary.com/pot1alz4/video/upload/v1788186201/1000060353.mp4"
-              loop
-              muted
-              playsinline>
-            </video>
-
-            <div class="phone-play">
-              <svg viewBox="0 0 24 24" fill="white">
-                <polygon points="6,4 20,12 6,20"/>
-              </svg>
-            </div>
-
+            <video class="phone-video" src="https://res.cloudinary.com/pot1alz4/video/upload/v1788186201/1000060353.mp4" loop muted playsinline></video>
+            <div class="phone-play"><svg viewBox="0 0 24 24" fill="white"><polygon points="6,4 20,12 6,20"/></svg></div>
             <div class="phone-caption">
-
-              <p>
-                "If your shoes make your feet hurt by the end of the day..."
-              </p>
-
-              <div class="phone-scrub">
-                <span>00:02</span>
-                <span class="bar"></span>
-                <span>00:15</span>
-              </div>
-
+              <p>"If your shoes make your feet hurt by the end of the day..."</p>
+              <div class="phone-scrub"><span>00:02</span><span class="bar"></span><span>00:15</span></div>
             </div>
-
           </div>
-
         </div>
-
         <div class="reel-meta">
           <span class="k">Format</span>
           <span class="v">"Problem-Solution" / Pain Point</span>
         </div>
-
       </div>
-
 
       <!-- Card 2 -->
-
       <div class="reel-card">
-
         <div class="phone">
-
           <div class="phone-screen">
-
             <div class="phone-notch"></div>
-
-            <video
-              class="phone-video"
-              src="https://res.cloudinary.com/pot1alz4/video/upload/v1788186916/hf_20260831_142109_76224255-3624-4d88-9538-5c5155acf391.mp4"
-              loop
-              muted
-              playsinline>
-            </video>
-
-            <div class="phone-play">
-              <svg viewBox="0 0 24 24" fill="white">
-                <polygon points="6,4 20,12 6,20"/>
-              </svg>
-            </div>
-
+            <video class="phone-video" src="https://res.cloudinary.com/pot1alz4/video/upload/v1788186916/hf_20260831_142109_76224255-3624-4d88-9538-5c5155acf391.mp4" loop muted playsinline></video>
+            <div class="phone-play"><svg viewBox="0 0 24 24" fill="white"><polygon points="6,4 20,12 6,20"/></svg></div>
             <div class="phone-caption">
-
-              <p>
-                "Starting the day with WinsTown Slim Green Coffee"
-              </p>
-
-              <div class="phone-scrub">
-                <span>00:03</span>
-                <span class="bar"></span>
-                <span>00:18</span>
-              </div>
-
+              <p>"Starting the day with WinsTown Slim Green Coffee"</p>
+              <div class="phone-scrub"><span>00:03</span><span class="bar"></span><span>00:18</span></div>
             </div>
-
           </div>
-
         </div>
-
         <div class="reel-meta">
           <span class="k">Format</span>
-          <span class="v">Hands-Only|POV Style UGC</span>
+          <span class="v">Hands-Only | POV Style UGC</span>
         </div>
-
       </div>
 
-
       <!-- Card 3 -->
-
       <div class="reel-card">
-
         <div class="phone">
-
           <div class="phone-screen">
-
             <div class="phone-notch"></div>
-
-            <video
-              class="phone-video"
-              src="https://res.cloudinary.com/pot1alz4/video/upload/v1788205567/1000060513.mp4"
-              loop
-              muted
-              playsinline>
-            </video>
-
-            <div class="phone-play">
-              <svg viewBox="0 0 24 24" fill="white">
-                <polygon points="6,4 20,12 6,20"/>
-              </svg>
-            </div>
-
+            <video class="phone-video" src="https://res.cloudinary.com/pot1alz4/video/upload/v1788205567/1000060513.mp4" loop muted playsinline></video>
+            <div class="phone-play"><svg viewBox="0 0 24 24" fill="white"><polygon points="6,4 20,12 6,20"/></svg></div>
             <div class="phone-caption">
-
-              <p>
-                "The glow up is real... link in bio 🌸"
-              </p>
-
-              <div class="phone-scrub">
-                <span>00:04</span>
-                <span class="bar"></span>
-                <span>00:22</span>
-              </div>
-
+              <p>"The glow up is real... link in bio 🌸"</p>
+              <div class="phone-scrub"><span>00:04</span><span class="bar"></span><span>00:22</span></div>
             </div>
-
           </div>
-
         </div>
-
         <div class="reel-meta">
           <span class="k">Format</span>
           <span class="v">Product Demonstration / How-To</span>
         </div>
-
       </div>
 
-
       <!-- Card 4 -->
-
       <div class="reel-card">
-
         <div class="phone">
-
           <div class="phone-screen">
-
             <div class="phone-notch"></div>
-
-            <video
-              class="phone-video"
-              src="https://res.cloudinary.com/pot1alz4/video/upload/v1788197766/1000060493.mp4"
-              loop
-              muted
-              playsinline>
-            </video>
-
-            <div class="phone-play">
-              <svg viewBox="0 0 24 24" fill="white">
-                <polygon points="6,4 20,12 6,20"/>
-              </svg>
-            </div>
-
+            <video class="phone-video" src="https://res.cloudinary.com/pot1alz4/video/upload/v1787940249/UGC_sample.mp4" loop muted playsinline></video>
+            <div class="phone-play"><svg viewBox="0 0 24 24" fill="white"><polygon points="6,4 20,12 6,20"/></svg></div>
             <div class="phone-caption">
-
-              <p>
-                "A quick, honest review of the Biodance Bio-Collagen Mask."
-              </p>
-
-              <div class="phone-scrub">
-                <span>00:01</span>
-                <span class="bar"></span>
-                <span>00:20</span>
-              </div>
-
+              <p>"A quick, honest review of the Vegan Mucin Peptide 8 Serum."</p>
+              <div class="phone-scrub"><span>00:01</span><span class="bar"></span><span>00:20</span></div>
             </div>
-
           </div>
-
         </div>
-
         <div class="reel-meta">
           <span class="k">Format</span>
           <span class="v">"Talking Head" Testimonial</span>
         </div>
-
       </div>
-
     </div>
-
   </section>
 
-
-  <!-- ================= OTHER CREATIVE AD FORMATS ================= -->
-
+  <!-- ================= CREATIVE AD FORMATS ================= -->
   <section id="creative-formats">
-
     <div class="section-head">
-
       <div>
-
-        <span class="section-tag">
-          Creative Formats — 01:02
-        </span>
-
-        <h2 class="section-title">
-          Other Creative Ad Formats
-        </h2>
-
+        <span class="section-tag">Creative Formats — 01:02</span>
+        <h2 class="section-title">Other Creative Ad Formats</h2>
       </div>
-
-      <p class="section-note">
-        Beyond traditional UGC — demonstrating flexibility across
-        storytelling styles, audiences, and production formats.
-      </p>
-
+      <p class="section-note">Beyond traditional UGC — flexible across storytelling formats.</p>
     </div>
-
 
     <div class="work-grid creative-formats-grid">
-
-
-      <!-- Card 1: Podcast -->
-
+      <!-- Card 1 -->
       <div class="reel-card format-card">
-
         <div class="phone">
-
           <div class="phone-screen">
-
             <div class="phone-notch"></div>
-
-            <video
-              class="phone-video"
-              src="https://res.cloudinary.com/pot1alz4/video/upload/v1789394383/Podcast_AI.mp4"
-              loop
-              muted
-              playsinline>
-            </video>
-
-            <div class="phone-play">
-
-              <svg viewBox="0 0 24 24" fill="white">
-                <polygon points="6,4 20,12 6,20"/>
-              </svg>
-
-            </div>
-
+            <video class="phone-video" src="https://res.cloudinary.com/pot1alz4/video/upload/v1790011314/KeylaNowaterMark.mp4" loop muted playsinline></video>
+            <div class="phone-play"><svg viewBox="0 0 24 24" fill="white"><polygon points="6,4 20,12 6,20"/></svg></div>
           </div>
-
         </div>
-
-
         <div class="reel-meta">
-
-          <span class="k">
-            Format
-          </span>
-
-          <span class="v">
-            Podcast-Style Ad
-          </span>
-
-          <p class="format-desc">
-            Conversational, podcast-inspired storytelling with a natural spoken hook,
-            supporting B-roll, captions, and retention-focused pacing.
-          </p>
-
+          <span class="k">Format</span>
+          <span class="v">Podcast-Style Ad</span>
+          <p class="format-desc">Conversational, podcast-inspired storytelling with a natural spoken hook.</p>
         </div>
-
       </div>
 
-
-      <!-- Card 2: French UGC -->
-
+      <!-- Card 2 -->
       <div class="reel-card format-card">
-
         <div class="phone">
-
           <div class="phone-screen">
-
             <div class="phone-notch"></div>
-
-            <video
-              class="phone-video"
-              src="https://res.cloudinary.com/pot1alz4/video/upload/v1789401910/Evoliya_UGC.mp4"
-              loop
-              muted
-              playsinline>
-            </video>
-
-            <div class="phone-play">
-
-              <svg viewBox="0 0 24 24" fill="white">
-                <polygon points="6,4 20,12 6,20"/>
-              </svg>
-
-            </div>
-
+            <video class="phone-video" src="https://res.cloudinary.com/pot1alz4/video/upload/v1789401910/Evoliya_UGC.mp4" loop muted playsinline></video>
+            <div class="phone-play"><svg viewBox="0 0 24 24" fill="white"><polygon points="6,4 20,12 6,20"/></svg></div>
           </div>
-
         </div>
-
-
         <div class="reel-meta">
-
-          <span class="k">
-            Format
-          </span>
-
-          <span class="v">
-            Multilingual UGC — French
-          </span>
-
-          <p class="format-desc">
-            UGC adapted for French-speaking audiences through localized scripting,
-            AI voice production, creator-style visuals, captions, and pacing.
-          </p>
-
+          <span class="k">Format</span>
+          <span class="v">Multilingual UGC — French</span>
+          <p class="format-desc">UGC adapted for French-speaking audiences through localized scripting.</p>
         </div>
-
       </div>
 
-
-      <!-- Card 3: 3D Animated Ad -->
-
+      <!-- Card 3 -->
       <div class="reel-card format-card">
-
         <div class="phone">
-
           <div class="phone-screen">
-
             <div class="phone-notch"></div>
-
-            <video
-              class="phone-video"
-              src="https://res.cloudinary.com/pot1alz4/video/upload/v1789416761/Pixar3d2.mp4"
-              loop
-              muted
-              playsinline>
-            </video>
-
-            <div class="phone-play">
-
-              <svg viewBox="0 0 24 24" fill="white">
-                <polygon points="6,4 20,12 6,20"/>
-              </svg>
-
-            </div>
-
+            <video class="phone-video" src="https://res.cloudinary.com/pot1alz4/video/upload/v1789416761/Pixar3d2.mp4" loop muted playsinline></video>
+            <div class="phone-play"><svg viewBox="0 0 24 24" fill="white"><polygon points="6,4 20,12 6,20"/></svg></div>
           </div>
-
         </div>
-
-
         <div class="reel-meta">
-
-          <span class="k">
-            Format
-          </span>
-
-          <span class="v">
-            3D Animated Ad
-          </span>
-
-          <p class="format-desc">
-            Character-driven animated advertising with expressive visuals,
-            cinematic scenes, product moments, and a direct-response structure.
-          </p>
-
+          <span class="k">Format</span>
+          <span class="v">3D Animated Ad</span>
+          <p class="format-desc">Character-driven animated advertising with expressive visuals.</p>
         </div>
-
       </div>
-
-
     </div>
-    <!-- THIS WAS MISSING IN YOUR ORIGINAL CODE -->
-
-
   </section>
-  <!-- THIS WAS ALSO MISSING IN YOUR ORIGINAL CODE -->
-
 
   <!-- ================= TOOLS ================= -->
-
   <section id="tools">
-
     <div class="section-head">
-
       <div>
-
-        <span class="section-tag">
-          Stack — 01:12
-        </span>
-
-        <h2 class="section-title">
-          What I edit with
-        </h2>
-
+        <span class="section-tag">Stack — 01:12</span>
+        <h2 class="section-title">What I edit with</h2>
       </div>
-
     </div>
-
-
     <div class="tools-grid">
-
       <span class="chip">CapCut</span>
       <span class="chip">ElevenLabs</span>
       <span class="chip">HeyGen</span>
+      <span class="chip">Google Flow</span>
       <span class="chip">Higgsfield</span>
       <span class="chip">Grok</span>
       <span class="chip">ChatGPT</span>
       <span class="chip">Claude</span>
       <span class="chip">Canva</span>
       <span class="chip">Photoshop</span>
-
     </div>
-
   </section>
 
 </main>
 
-
 <!-- ================= CONTACT ================= -->
-
 <section id="contact" class="contact">
-
   <div class="wrap">
-
-    <span class="section-tag">
-      Get in touch — 01:25
-    </span>
-
+    <span class="section-tag">Get in touch — 01:25</span>
     <h2>
       Got a product worth
-      <span style="color:var(--rec)">
-        turning into an ad?
-      </span>
+      <span style="color:var(--rec)">turning into an ad?</span>
     </h2>
-
     <div class="email-row">
-
-      <span id="emailText">
-        klint27marino@gmail.com
-      </span>
-
-      <button id="copyBtn" type="button">
-        Copy email
-      </button>
-
+      <span id="emailText">klint27marino@gmail.com</span>
+      <button id="copyBtn" type="button">Copy email</button>
     </div>
-
   </div>
-
 </section>
 
-
 <!-- ================= FOOTER ================= -->
-
 <footer class="wrap">
-
-  <span>
-    © 2026 Klint Marino
-  </span>
-
-  <span>
-    Cebu City, PH — remote worldwide
-  </span>
-
+  <span>© 2026 Klint Marino</span>
+  <span>Cebu City, PH — remote worldwide</span>
 </footer>
 
-
 <script>
-
   // Copy email button
-
   const copyBtn = document.getElementById('copyBtn');
-
-  const emailText =
-    document.getElementById('emailText').textContent;
-
-  copyBtn.addEventListener('click', () => {
-
-    navigator.clipboard.writeText(emailText).then(() => {
-
-      copyBtn.textContent = 'Copied!';
-
-      setTimeout(
-        () => copyBtn.textContent = 'Copy email',
-        1600
-      );
-
+  const emailSpan = document.getElementById('emailText');
+  if (copyBtn && emailSpan) {
+    copyBtn.addEventListener('click', () => {
+      navigator.clipboard.writeText(emailSpan.textContent.trim()).then(() => {
+        copyBtn.textContent = 'Copied!';
+        setTimeout(() => copyBtn.textContent = 'Copy email', 1600);
+      });
     });
+  }
 
-  });
+  // Timecode Rail Observer
+  const railItems = document.querySelectorAll('.rail-item');
+  const sections = document.querySelectorAll('main section, .hero, #contact');
 
+  if (railItems.length && sections.length) {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const id = entry.target.id;
+          railItems.forEach(item => {
+            item.classList.toggle('active', item.dataset.target === id);
+          });
+        }
+      });
+    }, { rootMargin: '-45% 0px -45% 0px' });
 
-  // Scroll-linked timecode rail
+    sections.forEach(sec => observer.observe(sec));
+  }
 
-  const railItems =
-    document.querySelectorAll('.rail-item');
+  // Progress Bar
+  const progressBar = document.getElementById('progressBar');
+  if (progressBar) {
+    window.addEventListener('scroll', () => {
+      const h = document.documentElement;
+      const scrolled = (h.scrollTop) / (h.scrollHeight - h.clientHeight) * 100;
+      progressBar.style.width = scrolled + '%';
+    });
+  }
 
-  const sections =
-    document.querySelectorAll(
-      'main section, .hero, #contact'
-    );
+  // Video hover/tap playback
+  const phoneContainers = document.querySelectorAll('.phone');
+  phoneContainers.forEach(container => {
+    const media = container.querySelector('.phone-video');
+    const playBtn = container.querySelector('.phone-play');
 
-  const observer =
-    new IntersectionObserver(
-      (entries) => {
-
-        entries.forEach(entry => {
-
-          if(entry.isIntersecting){
-
-            const id =
-              entry.target.id;
-
-            railItems.forEach(item => {
-
-              item.classList.toggle(
-                'active',
-                item.dataset.target === id
-              );
-
-            });
-
-          }
-
+    if (media && media.tagName === 'VIDEO') {
+      container.addEventListener('mouseenter', () => {
+        media.muted = false;
+        media.play().catch(() => {
+          media.muted = true;
+          media.play();
         });
-
-      },
-      {
-        rootMargin:'-45% 0px -45% 0px'
-      }
-    );
-
-
-  sections.forEach(sec => observer.observe(sec));
-
-
-  // Top progress bar
-
-  const progressBar =
-    document.getElementById('progressBar');
-
-  window.addEventListener('scroll', () => {
-
-    const h =
-      document.documentElement;
-
-    const scrolled =
-      (h.scrollTop) /
-      (h.scrollHeight - h.clientHeight) *
-      100;
-
-    progressBar.style.width =
-      scrolled + '%';
-
-
-    // Force Contact active at bottom
-
-    if(
-      window.innerHeight +
-      window.scrollY >=
-      h.scrollHeight - 60
-    ){
-
-      railItems.forEach(item => {
-
-        item.classList.toggle(
-          'active',
-          item.dataset.target === 'contact'
-        );
-
+        if (playBtn) playBtn.style.opacity = '0';
       });
 
+      container.addEventListener('mouseleave', () => {
+        media.pause();
+        media.muted = true;
+        if (playBtn) playBtn.style.opacity = '1';
+      });
+
+      container.addEventListener('click', () => {
+        if (media.paused) {
+          media.muted = false;
+          media.play().catch(() => {});
+          if (playBtn) playBtn.style.opacity = '0';
+        } else {
+          media.pause();
+          media.muted = true;
+          if (playBtn) playBtn.style.opacity = '1';
+        }
+      });
     }
-
   });
-
-
-  // Hover-to-play interface interaction
-
-  const phoneContainers =
-    document.querySelectorAll('.phone');
-
-
-  phoneContainers.forEach(container => {
-
-    const media =
-      container.querySelector('.phone-video');
-
-    const playButton =
-      container.querySelector('.phone-play');
-
-
-    if(media){
-
-      const isVideo =
-        media.tagName === 'VIDEO';
-
-
-      // Hover behavior
-
-      container.addEventListener(
-        'mouseenter',
-        () => {
-
-          if(isVideo){
-
-            media.muted = false;
-
-            media.play().catch(() => {
-
-              media.muted = true;
-              media.play();
-
-            });
-
-          }
-
-          if(playButton){
-            playButton.style.opacity = '0';
-          }
-
-        }
-      );
-
-
-      container.addEventListener(
-        'mouseleave',
-        () => {
-
-          if(isVideo){
-
-            media.pause();
-            media.muted = true;
-
-          }
-
-          if(playButton){
-            playButton.style.opacity = '1';
-          }
-
-        }
-      );
-
-
-      // Tap behavior
-
-      container.addEventListener(
-        'click',
-        () => {
-
-          if(isVideo){
-
-            if(media.paused){
-
-              media.muted = false;
-
-              media.play().catch(() => {});
-
-              if(playButton){
-                playButton.style.opacity = '0';
-              }
-
-            }else{
-
-              media.pause();
-              media.muted = true;
-
-              if(playButton){
-                playButton.style.opacity = '1';
-              }
-
-            }
-
-          }else{
-
-            // Toggle play button for image/GIF
-
-            if(playButton){
-
-              playButton.style.opacity =
-                playButton.style.opacity === '0'
-                  ? '1'
-                  : '0';
-
-            }
-
-          }
-
-        }
-      );
-
-    }
-
-  });
-
 </script>
 
 </body>
