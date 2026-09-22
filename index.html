@@ -532,11 +532,12 @@
 
   .brands-tagline {
     font-family: var(--font-mono);
-    font-size: 11.5px;
+    font-size: 14.5px;
+    font-weight: 600;
     letter-spacing: 0.12em;
     text-transform: uppercase;
-    color: var(--ink-soft);
-    margin-bottom: 28px;
+    color: var(--ink);
+    margin-bottom: 32px;
   }
 
   .logo-slider {
@@ -579,10 +580,10 @@
   }
 
   .logo-item img {
-    height: 32px;
+    height: 48px;
     width: auto;
     object-fit: contain;
-    opacity: 0.45;
+    opacity: 0.55;
     filter: grayscale(100%);
     transition: opacity 0.25s ease, filter 0.25s ease, transform 0.25s ease;
   }
@@ -590,7 +591,7 @@
   .logo-item img:hover {
     opacity: 1;
     filter: grayscale(0%);
-    transform: scale(1.05);
+    transform: scale(1.08);
   }
 
   @keyframes scrollLogos {
@@ -834,13 +835,12 @@
 
 <div class="progress-bar" id="progressBar"></div>
 
-<!-- ================= HEADER ================= -->
 <header>
   <div class="nav wrap">
     <div class="logo">KLINT<span>.</span>MARINO</div>
     <nav class="nav-links">
-      <a href="#work">Work</a>
       <a href="#brands">Brands</a>
+      <a href="#work">Work</a>
       <a href="#process">Process</a>
       <a href="#ugc-types">UGC Works</a>
       <a href="#creative-formats">Ad Formats</a>
@@ -853,19 +853,18 @@
   </div>
 </header>
 
-<!-- ================= TIMECODE RAIL ================= -->
 <nav class="rail" id="rail">
   <a href="#hero" class="rail-item" data-target="hero">
     <span class="tick"></span>
     <span class="label">00:00 INTRO</span>
   </a>
-  <a href="#work" class="rail-item" data-target="work">
-    <span class="tick"></span>
-    <span class="label">00:14 PORTFOLIO</span>
-  </a>
   <a href="#brands" class="rail-item" data-target="brands">
     <span class="tick"></span>
-    <span class="label">00:26 BRANDS</span>
+    <span class="label">00:14 BRANDS</span>
+  </a>
+  <a href="#work" class="rail-item" data-target="work">
+    <span class="tick"></span>
+    <span class="label">00:26 PORTFOLIO</span>
   </a>
   <a href="#process" class="rail-item" data-target="process">
     <span class="tick"></span>
@@ -891,7 +890,6 @@
 
 <main class="wrap">
 
-  <!-- ================= HERO ================= -->
   <section id="hero" style="border-top:none; padding-bottom:90px;" class="hero">
     <div>
       <div class="eyebrow">
@@ -936,11 +934,45 @@
     </div>
   </section>
 
-  <!-- ================= WORK ================= -->
+  <section id="brands" class="brands-section">
+    <p class="brands-tagline">Brands &amp; DTC Accounts I've Built Content For</p>
+    <div class="logo-slider">
+      <div class="logo-track">
+        <div class="logo-item"><img src="https://res.cloudinary.com/pot1alz4/image/upload/v1790013294/Screenshot_2026-09-22_015327-removebg-preview.png" alt="Block Blaster"></div>
+        <div class="logo-item"><img src="https://res.cloudinary.com/pot1alz4/image/upload/v1790013529/1.png" alt="Keyla"></div>
+        <div class="logo-item"><img src="https://res.cloudinary.com/pot1alz4/image/upload/v1790013590/image-removebg-preview_4.png" alt="Deckwright"></div>
+        <div class="logo-item"><img src="https://res.cloudinary.com/pot1alz4/image/upload/v1790013830/image-removebg-preview_5.png" alt="Evoliya"></div>
+        <div class="logo-item"><img src="https://res.cloudinary.com/pot1alz4/image/upload/v1790013945/Screenshot_2026-09-22_020515.png" alt="EveCurls"></div>
+        <div class="logo-item"><img src="https://res.cloudinary.com/pot1alz4/image/upload/v1790014039/fec2145a-93c9-49da-81ed-210a0ed12ec1.png" alt="LGbeauty"></div>
+
+        <div class="logo-item"><img src="https://res.cloudinary.com/pot1alz4/image/upload/v1790013294/Screenshot_2026-09-22_015327-removebg-preview.png" alt="Block Blaster"></div>
+        <div class="logo-item"><img src="https://res.cloudinary.com/pot1alz4/image/upload/v1790013529/1.png" alt="Keyla"></div>
+        <div class="logo-item"><img src="https://res.cloudinary.com/pot1alz4/image/upload/v1790013590/image-removebg-preview_4.png" alt="Deckwright"></div>
+        <div class="logo-item"><img src="https://res.cloudinary.com/pot1alz4/image/upload/v1790013830/image-removebg-preview_5.png" alt="Evoliya"></div>
+        <div class="logo-item"><img src="https://res.cloudinary.com/pot1alz4/image/upload/v1790013945/Screenshot_2026-09-22_020515.png" alt="EveCurls"></div>
+        <div class="logo-item"><img src="https://res.cloudinary.com/pot1alz4/image/upload/v1790014039/fec2145a-93c9-49da-81ed-210a0ed12ec1.png" alt="LGbeauty"></div>
+
+        <div class="logo-item"><img src="https://res.cloudinary.com/pot1alz4/image/upload/v1790013294/Screenshot_2026-09-22_015327-removebg-preview.png" alt="Block Blaster"></div>
+        <div class="logo-item"><img src="https://res.cloudinary.com/pot1alz4/image/upload/v1790013529/1.png" alt="Keyla"></div>
+        <div class="logo-item"><img src="https://res.cloudinary.com/pot1alz4/image/upload/v1790013590/image-removebg-preview_4.png" alt="Deckwright"></div>
+        <div class="logo-item"><img src="https://res.cloudinary.com/pot1alz4/image/upload/v1790013830/image-removebg-preview_5.png" alt="Evoliya"></div>
+        <div class="logo-item"><img src="https://res.cloudinary.com/pot1alz4/image/upload/v1790013945/Screenshot_2026-09-22_020515.png" alt="EveCurls"></div>
+        <div class="logo-item"><img src="https://res.cloudinary.com/pot1alz4/image/upload/v1790014039/fec2145a-93c9-49da-81ed-210a0ed12ec1.png" alt="LGbeauty"></div>
+
+        <div class="logo-item"><img src="https://res.cloudinary.com/pot1alz4/image/upload/v1790013294/Screenshot_2026-09-22_015327-removebg-preview.png" alt="Block Blaster"></div>
+        <div class="logo-item"><img src="https://res.cloudinary.com/pot1alz4/image/upload/v1790013529/1.png" alt="Keyla"></div>
+        <div class="logo-item"><img src="https://res.cloudinary.com/pot1alz4/image/upload/v1790013590/image-removebg-preview_4.png" alt="Deckwright"></div>
+        <div class="logo-item"><img src="https://res.cloudinary.com/pot1alz4/image/upload/v1790013830/image-removebg-preview_5.png" alt="Evoliya"></div>
+        <div class="logo-item"><img src="https://res.cloudinary.com/pot1alz4/image/upload/v1790013945/Screenshot_2026-09-22_020515.png" alt="EveCurls"></div>
+        <div class="logo-item"><img src="https://res.cloudinary.com/pot1alz4/image/upload/v1790014039/fec2145a-93c9-49da-81ed-210a0ed12ec1.png" alt="LGbeauty"></div>
+      </div>
+    </div>
+  </section>
+
   <section id="work">
     <div class="section-head">
       <div>
-        <span class="section-tag">Reels — 00:14</span>
+        <span class="section-tag">Reels — 00:26</span>
         <h2 class="section-title">Concept Portfolio</h2>
       </div>
       <p class="section-note">
@@ -950,7 +982,6 @@
     </div>
 
     <div class="work-grid">
-      <!-- Card 1 -->
       <div class="reel-card">
         <div class="phone">
           <div class="phone-screen">
@@ -969,7 +1000,6 @@
         </div>
       </div>
 
-      <!-- Card 2 -->
       <div class="reel-card">
         <div class="phone">
           <div class="phone-screen">
@@ -988,7 +1018,6 @@
         </div>
       </div>
 
-      <!-- Card 3 -->
       <div class="reel-card">
         <div class="phone">
           <div class="phone-screen">
@@ -1007,7 +1036,6 @@
         </div>
       </div>
 
-      <!-- Card 4 -->
       <div class="reel-card">
         <div class="phone">
           <div class="phone-screen">
@@ -1033,47 +1061,6 @@
     </p>
   </section>
 
-  <!-- ================= BRANDS SECTION ================= -->
-  <section id="brands" class="brands-section">
-    <p class="brands-tagline">Brands &amp; DTC Accounts I've Built Content For</p>
-    <div class="logo-slider">
-      <div class="logo-track">
-        <!-- Set 1 -->
-        <div class="logo-item"><img src="https://res.cloudinary.com/pot1alz4/image/upload/v1790013294/Screenshot_2026-09-22_015327-removebg-preview.png" alt="Block Blaster"></div>
-        <div class="logo-item"><img src="https://res.cloudinary.com/pot1alz4/image/upload/v1790013529/1.png" alt="Keyla"></div>
-        <div class="logo-item"><img src="https://res.cloudinary.com/pot1alz4/image/upload/v1790013590/image-removebg-preview_4.png" alt="Deckwright"></div>
-        <div class="logo-item"><img src="https://res.cloudinary.com/pot1alz4/image/upload/v1790013830/image-removebg-preview_5.png" alt="Evoliya"></div>
-        <div class="logo-item"><img src="https://res.cloudinary.com/pot1alz4/image/upload/v1790013945/Screenshot_2026-09-22_020515.png" alt="EveCurls"></div>
-        <div class="logo-item"><img src="https://res.cloudinary.com/pot1alz4/image/upload/v1790014039/fec2145a-93c9-49da-81ed-210a0ed12ec1.png" alt="LGbeauty"></div>
-
-        <!-- Set 2 (Duplicate for smooth infinite loop) -->
-        <div class="logo-item"><img src="https://res.cloudinary.com/pot1alz4/image/upload/v1790013294/Screenshot_2026-09-22_015327-removebg-preview.png" alt="Block Blaster"></div>
-        <div class="logo-item"><img src="https://res.cloudinary.com/pot1alz4/image/upload/v1790013529/1.png" alt="Keyla"></div>
-        <div class="logo-item"><img src="https://res.cloudinary.com/pot1alz4/image/upload/v1790013590/image-removebg-preview_4.png" alt="Deckwright"></div>
-        <div class="logo-item"><img src="https://res.cloudinary.com/pot1alz4/image/upload/v1790013830/image-removebg-preview_5.png" alt="Evoliya"></div>
-        <div class="logo-item"><img src="https://res.cloudinary.com/pot1alz4/image/upload/v1790013945/Screenshot_2026-09-22_020515.png" alt="EveCurls"></div>
-        <div class="logo-item"><img src="https://res.cloudinary.com/pot1alz4/image/upload/v1790014039/fec2145a-93c9-49da-81ed-210a0ed12ec1.png" alt="LGbeauty"></div>
-        <!-- Set 2 (Duplicate for smooth infinite loop) -->
-
-        <div class="logo-item"><img src="https://res.cloudinary.com/pot1alz4/image/upload/v1790013294/Screenshot_2026-09-22_015327-removebg-preview.png" alt="Block Blaster"></div>
-        <div class="logo-item"><img src="https://res.cloudinary.com/pot1alz4/image/upload/v1790013529/1.png" alt="Keyla"></div>
-        <div class="logo-item"><img src="https://res.cloudinary.com/pot1alz4/image/upload/v1790013590/image-removebg-preview_4.png" alt="Deckwright"></div>
-        <div class="logo-item"><img src="https://res.cloudinary.com/pot1alz4/image/upload/v1790013830/image-removebg-preview_5.png" alt="Evoliya"></div>
-        <div class="logo-item"><img src="https://res.cloudinary.com/pot1alz4/image/upload/v1790013945/Screenshot_2026-09-22_020515.png" alt="EveCurls"></div>
-        <div class="logo-item"><img src="https://res.cloudinary.com/pot1alz4/image/upload/v1790014039/fec2145a-93c9-49da-81ed-210a0ed12ec1.png" alt="LGbeauty"></div>
-
-        <!-- Set 2 (Duplicate for smooth infinite loop) -->
-        <div class="logo-item"><img src="https://res.cloudinary.com/pot1alz4/image/upload/v1790013294/Screenshot_2026-09-22_015327-removebg-preview.png" alt="Block Blaster"></div>
-        <div class="logo-item"><img src="https://res.cloudinary.com/pot1alz4/image/upload/v1790013529/1.png" alt="Keyla"></div>
-        <div class="logo-item"><img src="https://res.cloudinary.com/pot1alz4/image/upload/v1790013590/image-removebg-preview_4.png" alt="Deckwright"></div>
-        <div class="logo-item"><img src="https://res.cloudinary.com/pot1alz4/image/upload/v1790013830/image-removebg-preview_5.png" alt="Evoliya"></div>
-        <div class="logo-item"><img src="https://res.cloudinary.com/pot1alz4/image/upload/v1790013945/Screenshot_2026-09-22_020515.png" alt="EveCurls"></div>
-        <div class="logo-item"><img src="https://res.cloudinary.com/pot1alz4/image/upload/v1790014039/fec2145a-93c9-49da-81ed-210a0ed12ec1.png" alt="LGbeauty"></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ================= PROCESS ================= -->
   <section id="process">
     <div class="section-head">
       <div>
@@ -1092,7 +1079,6 @@
 
     <div class="process-list">
 
-      <!-- Step 1 -->
       <div class="process-row">
         <div class="process-meta">
           <span class="process-step">Step 01 // Research</span>
@@ -1111,7 +1097,6 @@
         </div>
       </div>
 
-      <!-- Step 2 -->
       <div class="process-row">
         <div class="process-meta">
           <span class="process-step">Step 02 // Avatar</span>
@@ -1130,7 +1115,6 @@
         </div>
       </div>
 
-      <!-- Step 3 -->
       <div class="process-row">
         <div class="process-meta">
           <span class="process-step">Step 03 // Video</span>
@@ -1150,7 +1134,6 @@
         </div>
       </div>
 
-      <!-- Step 4 -->
       <div class="process-row">
         <div class="process-meta">
           <span class="process-step">Step 04 // Editing</span>
@@ -1170,7 +1153,6 @@
         </div>
       </div>
 
-      <!-- Step 5 -->
       <div class="process-row">
         <div class="process-meta">
           <span class="process-step">Step 05 // Export</span>
@@ -1192,7 +1174,6 @@
     </div>
   </section>
 
-  <!-- ================= OTHER UGC WORKS ================= -->
   <section id="ugc-types">
     <div class="section-head">
       <div>
@@ -1203,7 +1184,6 @@
     </div>
 
     <div class="work-grid">
-      <!-- Card 1 -->
       <div class="reel-card">
         <div class="phone">
           <div class="phone-screen">
@@ -1222,7 +1202,6 @@
         </div>
       </div>
 
-      <!-- Card 2 -->
       <div class="reel-card">
         <div class="phone">
           <div class="phone-screen">
@@ -1241,7 +1220,6 @@
         </div>
       </div>
 
-      <!-- Card 3 -->
       <div class="reel-card">
         <div class="phone">
           <div class="phone-screen">
@@ -1260,7 +1238,6 @@
         </div>
       </div>
 
-      <!-- Card 4 -->
       <div class="reel-card">
         <div class="phone">
           <div class="phone-screen">
@@ -1281,7 +1258,6 @@
     </div>
   </section>
 
-  <!-- ================= CREATIVE AD FORMATS ================= -->
   <section id="creative-formats">
     <div class="section-head">
       <div>
@@ -1292,7 +1268,6 @@
     </div>
 
     <div class="work-grid creative-formats-grid">
-      <!-- Card 1 -->
       <div class="reel-card format-card">
         <div class="phone">
           <div class="phone-screen">
@@ -1308,7 +1283,6 @@
         </div>
       </div>
 
-      <!-- Card 2 -->
       <div class="reel-card format-card">
         <div class="phone">
           <div class="phone-screen">
@@ -1324,7 +1298,6 @@
         </div>
       </div>
 
-      <!-- Card 3 -->
       <div class="reel-card format-card">
         <div class="phone">
           <div class="phone-screen">
@@ -1342,7 +1315,6 @@
     </div>
   </section>
 
-  <!-- ================= TOOLS ================= -->
   <section id="tools">
     <div class="section-head">
       <div>
@@ -1366,7 +1338,6 @@
 
 </main>
 
-<!-- ================= CONTACT ================= -->
 <section id="contact" class="contact">
   <div class="wrap">
     <span class="section-tag">Get in touch — 01:25</span>
@@ -1381,7 +1352,6 @@
   </div>
 </section>
 
-<!-- ================= FOOTER ================= -->
 <footer class="wrap">
   <span>© 2026 Klint Marino</span>
   <span>Cebu City, PH — remote worldwide</span>
